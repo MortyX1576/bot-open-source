@@ -7,14 +7,14 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^11.5.1",
     "express": "^4.17.1",
+    "discord.js": "^11.5.1",
     "fs": "^0.0.2",
-    "jimp": "^0.9.3",
-    "lowdb": "^1.0.0",
+    "node": "^13.6.0",
     "moment": "^2.24.0",
     "mongoose": "^5.8.9",
-    "node": "^13.6.0"
+    "lowdb": "^1.0.0",
+    "jimp": "^0.9.3"
   },
   "engines": {
     "node": "10.x"
