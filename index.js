@@ -16,22 +16,23 @@ fs.readdir("./comandos/", (err,files) =>
 
 client.on("ready", () => {
   console.log("BOT ONLINE")
-  client.user.setActivity(`Teste Host`, {type: "PLAYING"});
+  client.user.setActivity(`Ping: ${Math.round(client.ping)}`, {type: "PLAYING"});
 })
 client.on('raw', async dados => {
-
 })
 client.on("guildDelete", guild  => {
-
 })
 client.on("guildCreate", guild => {
-
+})
+client.on("ChannelCreate", dados => {
+})
+client.on("ChannelDelete", dados => {
 })
 client.on('messageReactionAdd', (reaction, user) => {
-
 })
 client.on("guildMemberAdd", async member => {    
-
+})
+client.on("guildMemberRemove", async member => {    
 })
 client.on("message", async message=> { 
 let prefixo ="!" //Prefixo do BOT
