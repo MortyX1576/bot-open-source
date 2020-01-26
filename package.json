@@ -1,6 +1,6 @@
 {
-  "name": "hbotdiscord-js",
-  "version": "1.0",
+  "name": "botdiscord-js",
+  "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "index.js",
   "scripts": {
