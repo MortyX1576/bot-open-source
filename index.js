@@ -16,7 +16,7 @@ fs.readdir("./comandos/", (err,files) =>
 
 client.on("ready", () => {
   console.log("BOT ONLINE")
-  client.user.setActivity(`Ping: ${Math.round(client.ping)}`, {type: "PLAYING"});
+  client.user.setActivity(`Estou Online!`, {type: "PLAYING"});
 })
 client.on('raw', async dados => {
 })
