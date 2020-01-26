@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
 const fs = require('fs')
+const moment = require("moment")
+const mongoose = require("mongoose")
+const agora = moment();
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 //Carregamento dos Comandos
@@ -13,10 +16,15 @@ fs.readdir("./comandos/", (err,files) =>
         client.commands.set(props.help.name,props);                    
     });
 });
-
+//Log Erro
+process.on('uncaughtException', (err) => {
+let p = err.toString().trim().split(/ +/g)
+client.users.get("665200472596152341").send(p.join(" "));
+})
 client.on("ready", () => {
   console.log("BOT ONLINE")
   client.user.setActivity(`Estou Online!`, {type: "PLAYING"});
+  console.log(`Fui Ligado as ${agora.format("DD/MM/YYYY HH:mm")}`);
 })
 client.on('raw', async dados => {
 })
