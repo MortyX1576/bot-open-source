@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const moment = require("moment");
+const Database = require("./Data/database.js")
 const mongoose = require("mongoose");
 const agora = moment();
 const client = new Discord.Client();
@@ -52,6 +53,6 @@ client.on("message", async message => {
   let command = messageArray[0].toLowerCase(); //Comando
   let args = messageArray.slice(1); //Argumentos
   let arquivocmd = client.commands.get(command.slice(prefixo.length));
-  if (arquivocmd) arquivocmd.run(client, message, args); //Handler
+  if (arquivocmd) arquivocmd.run(client, message, args, Database); //Handler
 });
 client.login("NjY2MzI4NTY5OTUzMTI0Mzgy.Xi4Cow.SMfAUaiPM1H0h34KU3I_HWb7hbo"); //Login do Bot
