@@ -43,7 +43,8 @@ _id: guild.id,
 prefix: "!",
 canal: "0",
 cargo: "0"
-})}
+}).save();
+}
 })
 });
 client.on("ChannelCreate", dados => {

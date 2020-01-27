@@ -1,5 +1,5 @@
-var mongoose = require("mongoose"); 
-var Schema = mongoose.Schema; 
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 mongoose
   .connect(
     "mongodb+srv://Admin:Admin123@smash-unuhz.gcp.mongodb.net/test?retryWrites=true&w=majority",
@@ -21,11 +21,11 @@ mongoose
   });
 //database Guilds
 var Guilds = new Schema({
-    _id: { type: String, required: true }, 
-    prefix: { type: String, default: "!", required: true},
-    cargo: {type: String, defaul: "0"},
-    canal: {type: String, defaul: "0"}
-})
+  _id: { type: String, required: true },
+  prefix: { type: String, default: "!", required: true },
+  cargo: { type: String, defaul: "0" },
+  canal: { type: String, defaul: "0" }
+});
 //Database usuarios
 var Base = new Schema({
   _id: { type: String, required: true },
@@ -37,6 +37,5 @@ var Base = new Schema({
 });
 var Usuarios = mongoose.model("Usuarios", Base);
 var Guilds = mongoose.model("Guildas", Guilds);
-exports.Guilds = Guilds
+exports.Guilds = Guilds;
 exports.Usuarios = Usuarios;
-

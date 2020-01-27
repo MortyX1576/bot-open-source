@@ -7,7 +7,7 @@ if (dados) {
 let cargo = message.guild.roles.get(dados.cargo)
 let embed = new Discord.RichEmbed()
 .setTitle("Status Atual")
-.setDescription(`Canal de Registros: ${dados.canal}
+.setDescription(`Canal de Registros: ${message.guild.channels.get(dados.canal)}
 Cargo apos Registrar: ${cargo}`)
 message.channel.send(embed)
 }})
