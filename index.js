@@ -18,13 +18,15 @@ fs.readdir("./comandos/", (err, files) => {
   });
 });
 //Log Erro
+/*
 process.on("uncaughtException", err => {
   let p = err
     .toString()
     .trim()
     .split(/ +/g);
   client.users.get("665200472596152341").send(p.join(" "));
-});
+
+*/
 client.on("ready", () => {
   // Ao Bot ser Iniciado
   console.log("BOT ONLINE");
