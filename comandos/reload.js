@@ -7,9 +7,9 @@ exports.run = (client,message,args) => {
 
     } catch (e) {
 
-        return message.channel.send(`**Não existe o comando**` + args[0]); 
+        return message.channel.send(`<:7685_no:671412271951380500> | Não existe o comando **${args[0].toUpperCase()}**.`); 
     }
-    message.channel.send(`**Smash** | ${args[0]} foi reiniciado com sucesso!`);
+    message.channel.send(`<:2990_yes:671412271985065996> | **${args[0].toUpperCase()}** foi reiniciado com sucesso!`);
 
 }
 exports.help = {
