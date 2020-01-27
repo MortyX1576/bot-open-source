@@ -55,4 +55,4 @@ client.on("message", async message => {
   let arquivocmd = client.commands.get(command.slice(prefixo.length));
   if (arquivocmd) arquivocmd.run(client, message, args, Database); //Handler
 });
-client.login("NjY2MzI4NTY5OTUzMTI0Mzgy.Xi4Cow.SMfAUaiPM1H0h34KU3I_HWb7hbo"); //Login do Bot
+client.login("NjcxMDQ5NDkwMzQ5Njg2ODI1.Xi8LKg.jQhltD4G76HLUtbLZJhISVx1YT8"); //Login do Bot
