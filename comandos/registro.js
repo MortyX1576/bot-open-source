@@ -14,7 +14,8 @@ exports.run = async (client, message, args,Database) => {
       tag: message.author.discriminator,
       senha: `${args}`,
       xp: "0",
-      level: "0"     
+      level: "0",
+      logad: true
       }).save()
      })}) //banco de dados
 };
