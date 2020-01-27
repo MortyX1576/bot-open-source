@@ -1,13 +1,12 @@
 const Discord = require ('discord.js')
-const index = require ('../index.js')
 
 exports.run = (bot,message,args) => {
 
     try {
         delete require.cache[require.resolve(`./${args[0]}.js`)]
-        bot.comands.delete(args[0])
+        bot.comandos.delete(args[0])
         const pull = require (`./${args[0]}.js`)
-        bot.commands.set(args[0], pull)
+        bot.comandos.set(args[0], pull)
         console.log(pull)
 
     } catch (e) {

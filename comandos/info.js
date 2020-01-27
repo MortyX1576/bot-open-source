@@ -4,7 +4,7 @@ exports.run = (bot,message) => {
     const embed = new Discord.RichEmbed()
     .setAuthor("Informações do Bot!")
 
-    .setDescription(`Oláw! Sou o **SMASH**, um bot desenvolvido para **lhe ajudar** no seu servidor!`)
+    .setDescription(`Olá! Sou o **SMASH**, um bot desenvolvido para **lhe ajudar** no seu servidor!`)
     .addField('<:nodejs:671400058708557836> Desenvolvido em:', `Java Script!`, true)
     .addField('<:unnamed:671417880847581323> Total de comandos:', `2 Comandos`, true)
     .addField('<:01512:671417880847581222> Meu prefix é:', `!`, true)

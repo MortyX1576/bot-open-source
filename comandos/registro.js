@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 exports.run = async (client, message, args,Database) => {
+  Database.Guilds.findOne({ _id: message.guild.id}, function(erro, dados) {
+    console.log(message.channel)
+  if(message.guild.channel != dados.canal) return message.reply("Voce nao está em um canal de Registro")
   if(!args[0]) return message.channel.send(`❌ | ${message.author} Coloque uma Senha`)  
   //if(!args.length <= 6) return message.reply("Senha muito Fraca! Use acima de 6 Caracters")
      Database.Usuarios.findOne({ _id: message.author.id}, function(erro, dados) {
@@ -14,7 +17,7 @@ exports.run = async (client, message, args,Database) => {
       xp: "0",
       level: "0"     
       }).save()
-     })  
+     })}) //banco de dados
 };
 exports.help = {
   name: "registro"
