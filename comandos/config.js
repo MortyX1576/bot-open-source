@@ -8,10 +8,13 @@ let cargo = message.guild.roles.get(dados.cargo)
 let embed = new Discord.RichEmbed()
 .setTitle("Status Atual")
 .setDescription(`Canal de Registros: ${message.guild.channels.get(dados.canal)}
-Cargo apos Registrar: ${cargo}`)
-message.channel.send(embed)
-}})
-}
+Cargo apos Registrar: ${cargo}\n\n
+Para Alterar o Canal de Registro Reaja a '🔧' e Para Alterar o Cargo Reaja a '🛠 '`)
+message.channel.send(embed).then(x =>{
+x.react("🔧 ")
+})//Mensagem
+}}) //Banco de dados
+}//Evento
 exports.help = {
     name: 'config'
 }
