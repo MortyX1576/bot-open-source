@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema; 
 mongoose
   .connect(
-    "mongodb+srv://Smoke:Smoke2020@smoke-wovtr.mongodb.net/test?retryWrites=true&w=majority",
+    "mongodb+srv://Admin:Admin123@smash-unuhz.gcp.mongodb.net/test?retryWrites=true&w=majority",
     {
       useNewUrlParser: true
     }
@@ -22,7 +22,9 @@ mongoose
 //database Guilds
 var Guilds = new Schema({
     _id: { type: String, required: true }, 
-    prefix: { type: String, default: "!", required: true}
+    prefix: { type: String, default: "!", required: true},
+    cargo: {type: String, defaul: "0"},
+    canal: {type: String, defaul: "0"}
 })
 //Database usuarios
 var Base = new Schema({
