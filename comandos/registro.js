@@ -15,7 +15,7 @@ exports.run = async (client, message, args,Database) => {
       senha: `${args}`,
       xp: "0",
       level: "0",
-      logad: true
+      logado: true
       }).save()
      })}) //banco de dados
 };
