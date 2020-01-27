@@ -36,7 +36,15 @@ client.on("guildDelete", guild => {
   //Ao Bot ser Expulso de uma Guilda
 });
 client.on("guildCreate", guild => {
-  //Ao Bot entrar em uma Guilda
+Database.Guilds.findOne({ _id: guild.id}, function(erro, dados) {
+if (!dados) {
+new Database.Guilds({
+_id: guild.id,
+prefix: "!",
+canal: "0",
+cargo: "0"
+})}
+})
 });
 client.on("ChannelCreate", dados => {
   //Chamando quando cria um canal

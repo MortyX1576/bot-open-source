@@ -9,6 +9,7 @@ let embed = new Discord.RichEmbed()
 .setTitle("Status Atual")
 .setDescription(`Canal de Registros: ${dados.canal}
 Cargo apos Registrar: ${cargo}`)
+message.channel.send(embed)
 }})
 }
 exports.help = {

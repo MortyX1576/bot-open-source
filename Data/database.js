@@ -37,6 +37,6 @@ var Base = new Schema({
 });
 var Usuarios = mongoose.model("Usuarios", Base);
 var Guilds = mongoose.model("Guildas", Guilds);
-exports.Users = Guilds
+exports.Guilds = Guilds
 exports.Usuarios = Usuarios;
 
