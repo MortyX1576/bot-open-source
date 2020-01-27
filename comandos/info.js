@@ -11,7 +11,7 @@ exports.run = (bot,message) => {
     .addField('Informações de Guilds', `● Estou presente em [${bot.guilds.size}] Servidores\n● Tenho [${bot.users.size}] Membros ativos!`)
     .addField('Criadores:', `\`\`\`\nMorty#4370, miguelws#9617 e Godzin#5566.\`\`\``)
     .setColor('DARK_GREY')
-    .setFooter(`© Smash`, bot.user.avatarURL)
+    .setFooter(`Smash ©`, bot.user.avatarURL)
 
     message.channel.send(embed)
 }
