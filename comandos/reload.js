@@ -7,9 +7,10 @@ exports.run = (client,message,args) => {
 
     } catch (e) {
 
-        return message.channel.send(`Unable to reload: ${args[0]}`);
+        return message.channel.send(`**Não existe o comando**` + args[0]); 
     }
-    message.channel.send(`Você reiniciou o ${args[0]}`);
+    message.channel.send(`**Smash** | ${args[0]} foi reiniciado com sucesso!`);
+
 }
 exports.help = {
     name: 'reload'
