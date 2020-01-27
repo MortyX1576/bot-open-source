@@ -27,9 +27,7 @@ dados.save();
 })})
 })//coletor
 })//Mensagem
-  
 }}) //Banco de dados
-  
 }//Evento
 exports.help = {
     name: 'config'
