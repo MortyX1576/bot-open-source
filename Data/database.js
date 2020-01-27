@@ -19,6 +19,12 @@ mongoose
       "\x1b[31m[ BANCO DE DADOS ] \x1b[0mBanco de dados desligado por erro OK"
     );
   });
+//database Guilds
+var Guilds = new Schema({
+    _id: { type: String, required: true }, 
+    prefix: { type: String, default: "!", required: true}
+})
+//Database usuarios
 var Base = new Schema({
   _id: { type: String, required: true },
   nome: { type: String, required: true },
@@ -28,5 +34,7 @@ var Base = new Schema({
   tag: { type: String }
 });
 var Usuarios = mongoose.model("Usuarios", Base);
+var Guilds = mongoose.model("Guildas", Guilds);
+exports.Users = Guilds
 exports.Usuarios = Usuarios;
 
