@@ -11,22 +11,14 @@ Database.Usuarios.findOne({ _id: name.id || args[0]}, function(erro, dados) {
 client.users.forEach(x =>{
 Database.Usuarios.findOne({ _id: x.id}, function(erro, result) {   
 if(x.id == dados.idlogado) return VALUE = 1;
-})
-})
-//if(Array.indexOf(message.author.id) > -1) return console.log("oi")
-//console.log(Array.indexOf(message.author.id))
-if(VALUE == 1)
-console.log(VALUE)
-/*
-if(x.id != message.author.id)
-{
+})})
+if(VALUE == 1) return message.reply("Voce ja está Logado")
 if(dados.senha != args[1]) return message.reply("Senha Incorreta")
 message.channel.send(`Voce Logou ${message.author}`)
 dados.logado = true;
 dados.idlogado = message.author.id;
 dados.save();
-}else{message.reply("Voce ja está em uma conta")}
-*/
+VALUE = 0;
 })
 }
 exports.help = {
