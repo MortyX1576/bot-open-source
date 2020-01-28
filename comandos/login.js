@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-let Cont =0;
+let Array = [];
 exports.run = async (client, message, args,Database) => 
 {    
 if(!args[0]) return message.reply("Mencione Seu Nome")
@@ -9,9 +9,9 @@ if(!name) return message.reply("Esse Usuario nao Existe")
 Database.Usuarios.findOne({ _id: name.id || args[0]}, function(erro, dados) {   
 //if(dados.logado == true) return message.reply("Voce ja está Logado")
 client.users.forEach(x =>{
-if(message.author.id == x.id) return message.reply("Voce esta numa conta")
-console.log("Voce logou")
+Array.push(x.id);
 })
+if(Array == message.author.id) return console.log("oi")
 /*
 if(x.id != message.author.id)
 {
