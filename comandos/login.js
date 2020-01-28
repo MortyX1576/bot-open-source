@@ -11,7 +11,8 @@ Database.Usuarios.findOne({ _id: name.id || args[0]}, function(erro, dados) {
 client.users.forEach(x =>{
 Array.push(x.id);
 })
-if(Array == message.author.id) return console.log("oi")
+//if(Array.indexOf(message.author.id) > -1) return console.log("oi")
+  console.log(Array.indexOf(message.author.id))
 /*
 if(x.id != message.author.id)
 {
