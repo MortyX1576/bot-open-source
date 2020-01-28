@@ -33,7 +33,11 @@ client.on("ready", () => {
   client.user.setActivity(`Estou Online!`, { type: "PLAYING" });
   console.log(`Fui Ligado as ${agora.format("DD/MM/YYYY HH:mm")}`);
 });
-client.on("raw", async dados => {});
+client.on("raw", async dados => {
+  if(dados.t != "PRESENCE_UPDATE") return;
+  console.log(dados)
+  if(dados.t.user.status == "dnd") return console.log("offline")
+});
 client.on("guildDelete", guild => {
   //Ao Bot ser Expulso de uma Guilda
 });

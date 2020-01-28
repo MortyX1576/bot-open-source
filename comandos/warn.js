@@ -9,11 +9,13 @@ exports.run = (client,message,args) => {
     const reason = args.slice(1).join(' ')
     if (!reason) return message.reply ("Você não colocou um motivo válido!").then(msg => msg.delete(300))
 
+   const canal = client.channels.get("671460563594772500")
+
     const embed = new Discord.RichEmbed()
     .setTitle("🔔 Alerta!")
     .setDescription(`O membro **${member}** foi avisado pelo **${message.author}!**\nMotivo: **${reason}**`)
     .setColor('BLUE')
-    message.channel.send(embed)
+    canal.send(embed)
 }
 
 exports.help = {
