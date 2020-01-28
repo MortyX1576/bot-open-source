@@ -4,7 +4,7 @@ module.exports = {
     run: async (bot, message, args) => {
       
       message.author.createDM()
-      message.channel.send(`${message.author}, olhe s`)
+      message.channel.send(`${message.author}, olhe seu privado!`).then (msg => msg.delete(5000))
 
     const embed3 = new Discord.RichEmbed()
     .setTitle("Painel de Ajuda")   
