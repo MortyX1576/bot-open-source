@@ -19,9 +19,9 @@ exports.run = async (client, message, args, Database) => {
         let filtro1 = (reaction,usuario) => reaction.emoji.name === "⚙️" && usuario.id === message.author.id
         let filtro2 = (reaction,usuario) => reaction.emoji.name === "🎮" && usuario.id === message.author.id
         let filtro3 = (reaction,usuario) => reaction.emoji.name === "🔙" && usuario.id === message.author.id
-        let collector1 = dados.createReactionCollector(filtro1, {max: 1, time: 2*60*1000})
-        let collector2 = dados.createReactionCollector(filtro2, {max: 1, time: 2*60*1000})
-        let collector3 = dados.createReactionCollector(filtro3, {max: 1, time: 2*60*1000})
+        let collector1 = dados.createReactionCollector(filtro1, {max: 10, time: 2*60*1000})
+        let collector2 = dados.createReactionCollector(filtro2, {max: 10, time: 2*60*1000})
+        let collector3 = dados.createReactionCollector(filtro3, {max: 10, time: 2*60*1000})
         collector1.on('collect', reaction=>{
         if(reaction.emoji.name === "⚙️")
         {
@@ -52,6 +52,8 @@ exports.run = async (client, message, args, Database) => {
         {
         dados.edit(embed3)
         dados.react("🔙");
+        reaction.remove(message.author.id)
+        reaction.remove()
         }}) // Coletor 3
 })
 }  
