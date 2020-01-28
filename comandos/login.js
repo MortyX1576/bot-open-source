@@ -9,9 +9,11 @@ if(!name) return message.reply("Esse Usuario nao Existe")
 Database.Usuarios.findOne({ _id: name.id || args[0]}, function(erro, dados) {   
 //if(dados.logado == true) return message.reply("Voce ja está Logado")
 client.users.forEach(x =>{
-if(x.id == dados.idlogado) return Array.push(x.id);
+Database.Usuarios.findOne({ _id: x.id}, function(erro, result) {   
+if(x.id == dados.idlogado) return Array.push(result.idlogado);
 })
-//if(Array.indexOf(message.author.id) > -1) return console.log("oi")
+})
+if(Array.indexOf(message.author.id) > -1) return console.log("oi")
 console.log(Array.indexOf(message.author.id))
   console.log(Array)
 /*
