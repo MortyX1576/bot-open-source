@@ -14,7 +14,7 @@ fs.readdir("./comandos/", (err, files) => {
   arquivojs.forEach((f, i) => {
     let props = require(`./comandos/${f}`);
     console.log(`Comando ${f} Carregado`);
-    client.commands.set(props.help);
+    client.commands.set(props);
   });
 });
 //Log Erro
