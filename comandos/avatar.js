@@ -2,13 +2,12 @@ const Discord = require ('discord.js')
 
 exports.run = (client, message, args) => {
 
-    const member = message.mentions.members.first() || message.guild.members.get(args[0]);
-
+    const member = message.mentions.members.first() || message.member
     const embed = new Discord.RichEmbed()
     .setDescription(`Avatar do ${member}!`)
     .setColor('RANDOM')
-    .setImage(member.avatarURL)
-    .setFooter(`Autor: ${message.author}`)
+    .setImage(member.user.avatarURL)
+    .setFooter(`Autor: ${message.author.username}`)
     .setTimestamp()
     message.channel.send(embed)
 

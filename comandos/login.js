@@ -14,7 +14,7 @@ if(x.id == dados.idlogado) return VALUE = 1;
 })})
 if(VALUE == 1) return message.reply("Voce ja está Logado")
 if(dados.senha != args[1]) return message.reply("Senha Incorreta")
-message.channel.send(`Voce Logou ${message.author}`)
+message.channel.send(`Voce Logou na Conta ${dados.nome}`)
 dados.logado = true;
 dados.idlogado = message.author.id;
 dados.save();

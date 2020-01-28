@@ -13,7 +13,6 @@ exports.run = (client,message,args) => {
     .setTitle("🔔 Alerta!")
     .setDescription(`O membro **${member}** foi avisado pelo **${message.author}!**\nMotivo: **${reason}**`)
     .setColor('BLUE')
-    
     message.channel.send(embed)
 }
 

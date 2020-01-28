@@ -9,7 +9,7 @@ exports.run = async (client, message, args, Database) => {
     .setTitle("Painel de Ajuda")   
     .setDescription("▪ Use '⚙️' para ver os comandos da administração.\n▪ Use '🎮' para ver os comandos de utilidade.\n▪ Use '🔙' para voltar.")
     .setColor ("#00FF00")
-    .setThumbnail(bot.user.avatarURL)
+    .setThumbnail(client.user.avatarURL)
     .setFooter("Página: 1")
     .setTimestamp()
     

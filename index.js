@@ -63,7 +63,7 @@ client.on("message", async message => {
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase(); //Comando
   let args = messageArray.slice(1); //Argumentos
-  let arquivocmd = client.comamands.get(command.slice(prefixo.length));
+  let arquivocmd = client.commands.get(command.slice(prefixo.length));
   if (arquivocmd) arquivocmd.run(client, message, args, Database); //Handler
 });
 client.login("NjcxMDQ5NDkwMzQ5Njg2ODI1.Xi8LKg.jQhltD4G76HLUtbLZJhISVx1YT8"); //Login do Bot
