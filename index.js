@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const agora = moment();
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
-
+let valor;
 //Carregamento dos Comandos
 fs.readdir("./comandos/", (err, files) => {
   if (err) console.error(err);
@@ -63,12 +63,18 @@ client.on("ChannelDelete", dados => {
 client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
 client.on("guildMemberRemove", async member => {});
-client.on("message", async message => {
-  let prefixo = "!"; //Prefixo do BOT
+client.on("message", async message => {  
+  Database.Guilds.findOne({ "_id": message.guild.id}, function (erro, documento) { 
+  if (documento) {   
+  valor = documento.prefix;
+  let prefixo = valor; //Prefixo do BOT
+  if(!message.content.startsWith(prefixo)) return ;       
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase(); //Comando
   let args = messageArray.slice(1); //Argumentos
   let arquivocmd = client.commands.get(command.slice(prefixo.length));
   if (arquivocmd) arquivocmd.run(client, message, args, Database); //Handler
+  }
+  })  
 });
 client.login("NjcxMDQ5NDkwMzQ5Njg2ODI1.Xi8LKg.jQhltD4G76HLUtbLZJhISVx1YT8"); //Login do Bot
