@@ -14,6 +14,7 @@ let embed = new Discord.RichEmbed()
 message.author.send(embed)
 })
 }
+
 exports.help = {
     name: "painel"
 }
