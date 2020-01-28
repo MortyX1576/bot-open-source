@@ -34,7 +34,8 @@ var Base = new Schema({
   level: { type: String },
   xp: { type: String },
   tag: { type: String },
-  logado: {type: Boolean}
+  logado: {type: Boolean},
+  idlogado: {type: String}
 });
 var Usuarios = mongoose.model("Usuarios", Base);
 var Guilds = mongoose.model("Guildas", Guilds);
