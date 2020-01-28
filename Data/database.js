@@ -22,7 +22,7 @@ mongoose
 //database Guilds
 var Guilds = new Schema({
   _id: { type: String, required: true },
-  prefix: { type: String, default: "!", required: true },
+  prefix: { type: String, default: "!"},
   cargo: { type: String, defaul: "0" },
   canal: { type: String, defaul: "0" }
 });
