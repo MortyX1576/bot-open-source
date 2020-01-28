@@ -11,8 +11,8 @@ let embed = new Discord.RichEmbed()
 message.channel.send(embed).then(async mensagem => {
 mensagem.react("🛠️")
 
-let filter = (r,u)=>r.me && !u.bot
-let collector = mensagem.createReactionCollector(filter);
+let filtro = (reaction,usuario) => reaction.emoji.name === "🛠️" && usuario.id === message.author.id
+const collector = mensagem.createReactionCollector(filtro, {max: 1, time: 60000})
 collector.on('collect', r =>{
 if(r.emoji.name === "🛠️")
 message.reply("Digite um prefixo.")

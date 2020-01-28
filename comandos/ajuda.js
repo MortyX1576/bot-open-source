@@ -15,8 +15,7 @@ exports.run = async (client, message, args, Database) => {
     
         message.channel.send(embed3).then(async dados =>{
         await dados.react("⚙️");
-        await dados.react("🎮");
-        await dados.react("🔙");                          
+        await dados.react("🎮");                          
         let filtro1 = (reaction,usuario) => reaction.emoji.name === "⚙️" && usuario.id === message.author.id
         let filtro2 = (reaction,usuario) => reaction.emoji.name === "🎮" && usuario.id === message.author.id
         let filtro3 = (reaction,usuario) => reaction.emoji.name === "🔙" && usuario.id === message.author.id
@@ -33,6 +32,8 @@ exports.run = async (client, message, args, Database) => {
         .setFooter("Página: 2")
         .setTimestamp()
         dados.edit(embed1)
+        reaction.remove(message.author.id)
+        dados.react("🔙");
         }}) // Coletor 1
         collector2.on('collect', reaction=>{
         if(reaction.emoji.name === "🎮")
@@ -44,11 +45,13 @@ exports.run = async (client, message, args, Database) => {
         .setFooter("Página: 3")
         .setTimestamp()
         dados.edit(embed2)
+        reaction.remove(message.author.id)
         }}) // Coletor 2
         collector3.on('collect', reaction=>{
         if(reaction.emoji.name === "🔙")
         {
         dados.edit(embed3)
+        dados.react("🔙");
         }}) // Coletor 3
 })
 }  
