@@ -1,10 +1,9 @@
 const Discord = require ('discord.js')
 
-module.exports = {
-    run: async (bot, message, args) => {
+exports.run = async (client, message, args, Database) => {
       
-      message.author.createDM()
-      message.channel.send(`${message.author}, olhe seu privado!`).then (msg => msg.delete(5000))
+    message.author.createDM()
+    message.channel.send(`${message.author}, olhe seu privado!`).then (msg => msg.delete(5000))
 
     const embed3 = new Discord.RichEmbed()
     .setTitle("Painel de Ajuda")   
@@ -24,7 +23,6 @@ module.exports = {
         let collector1 = dados.createReactionCollector(filtro1, {max: 1, time: 2*60*1000})
         let collector2 = dados.createReactionCollector(filtro2, {max: 1, time: 2*60*1000})
         let collector3 = dados.createReactionCollector(filtro3, {max: 1, time: 2*60*1000})
-
         collector1.on('collect', reaction=>{
         if(reaction.emoji.name === "⚙️")
         {
@@ -35,7 +33,6 @@ module.exports = {
         .setFooter("Página: 2")
         .setTimestamp()
         dados.edit(embed1)
-
         }}) // Coletor 1
         collector2.on('collect', reaction=>{
         if(reaction.emoji.name === "🎮")
@@ -47,18 +44,14 @@ module.exports = {
         .setFooter("Página: 3")
         .setTimestamp()
         dados.edit(embed2)
-
         }}) // Coletor 2
         collector3.on('collect', reaction=>{
         if(reaction.emoji.name === "🔙")
         {
         dados.edit(embed3)
-
         }}) // Coletor 3
 })
-}
 }  
-
 exports.help = {
     name: 'ajuda'
 }

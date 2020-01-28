@@ -10,7 +10,9 @@ exports.run = (client, message, args) => {
     .setImage(member.avatarURL)
     .setFooter(`Autor: ${message.author}`)
     .setTimestamp()
-
     message.channel.send(embed)
 
+}
+exports.help = {
+    name: 'avatar'
 }
