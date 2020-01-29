@@ -62,6 +62,7 @@ client.on("ChannelDelete", dados => {
 });
 client.on("presenceUpdate",dados =>{
   console.log(dados)
+  console.log(dados.user.status)
 })
 client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
