@@ -6,7 +6,7 @@ if(!args[0]) return message.reply("Mencione Seu Nome")
 if(!args[1]) return message.reply("Faltou sua senha")
 let name = message.mentions.members.first() || args[0]
 if(!name) return message.reply("Esse Usuario nao Existe")
-Database.Usuarios.findOne({ _id: name.id || args[0]}, function(erro, dados) {   
+await Database.Usuarios.findOne({ _id: name.id || args[0]}, function(erro, dados) {   
 //if(dados.logado == true) return message.reply("Voce ja está Logado")
 client.users.forEach(x =>{
 Database.Usuarios.findOne({ _id: x.id}, function(erro, result) {   

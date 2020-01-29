@@ -34,9 +34,9 @@ client.on("ready", () => {
   console.log(`Fui Ligado as ${agora.format("DD/MM/YYYY HH:mm")}`);
 });
 client.on("raw", async dados => {
-  if(dados.t != "PRESENCE_UPDATE") return;
+  //if(dados.t != "PRESENCE_UPDATE") return;
   //console.log(dados)
-  console.log(dados.d.user.user_status)
+  //console.log(dados.d.user.user_status)
   //if(dados.d.user.status == "dnd") return console.log("offline")
 });
 client.on("guildDelete", guild => {
@@ -60,6 +60,9 @@ client.on("ChannelCreate", dados => {
 client.on("ChannelDelete", dados => {
   //Chamado quando deleta um canal
 });
+client.on("presenceUpdate",dados =>{
+  console.log(dados)
+})
 client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
 client.on("guildMemberRemove", async member => {});

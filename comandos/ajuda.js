@@ -13,7 +13,7 @@ exports.run = async (client, message, args, Database) => {
     .setFooter("Página: 1")
     .setTimestamp()
     
-        message.channel.send(embed3).then(async dados =>{
+        message.author.send(embed3).then(async dados =>{
         await dados.react("⚙️");
         await dados.react("🎮");                          
         let filtro1 = (reaction,usuario) => reaction.emoji.name === "⚙️" && usuario.id === message.author.id
