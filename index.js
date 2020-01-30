@@ -61,8 +61,8 @@ client.on("ChannelDelete", dados => {
   //Chamado quando deleta um canal
 });
 client.on("presenceUpdate",dados =>{
-  console.log(dados)
-  console.log(dados.user.status)
+  //console.log(dados)
+ // console.log(dados.user.status)
 })
 client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
