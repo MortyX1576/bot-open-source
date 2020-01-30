@@ -68,6 +68,17 @@ client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
 client.on("guildMemberRemove", async member => {});
 client.on("message", async message => {  
+  Database.Usuarios.findOne({ "_id": message.author.id}, function (erro, dados) { 
+  if(dados) {
+  dados.xp += Math.floor(Math.random() * 10) + 1;
+  if(dados.xp >= 400){
+  dados.xp = 0;
+  dados.level += 1;
+  message.channel.send(`🎉 | Parabéns ${message.author}`)
+  dados.save();
+  }
+  dados.save();
+  }})
   Database.Guilds.findOne({ "_id": message.guild.id}, function (erro, documento) { 
   if (documento) {   
   valor = documento.prefix;
