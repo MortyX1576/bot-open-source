@@ -38,7 +38,7 @@ exports.run = async (client, message, args, Database) => {
         dados.react("672131751031734272");
         }}) // Coletor 1
 
-        collector3.on('collect', reaction=>{
+        collector2.on('collect', reaction=>{
         if(reaction.emoji.name === "672134186739564584")
         {
         dados.edit(embed3)
