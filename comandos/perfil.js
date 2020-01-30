@@ -6,15 +6,16 @@ exports.run = (client, message, args) => {
     if (!member) return message.reply("Você não informou um membro válido!").then (msg => msg.delete(5 * 1000))
 
     let on = member.presence.status.replace("dnd", "Ocupado").replace("idle", "Ausente").replace("offline", "Invisível").replace("online", "Disponível").replace("stream", "Transmitindo")
-
+    let roles = member.roles.filter(r => r.name !== '@everyone').join(', ')
+    
     const embed = new Discord.RichEmbed()
     .setDescription(`**Informações:**`)
     .addField('Usúario:', `${member}`, true)
     .addField('Usúario:', `${member.id}`, true)
     .addField('Status:', `**${on}**`, true) 
-    .addField('Data que entrou no servidor:', `ainda vou terminar`)
+    .addField('Data que entrou no servidor:', `${member.joinedAt}`)
     .addField('Criou a conta em:', `ainda vou terminar`)
-    .addField('Roles:', `${member.joinedAt}`)
+    .addField('Roles:', `${member.roles}`)
     .setThumbnail(member.user.avatarURL)
     .setColor('GOLD')
     .setFooter(`Quem executou: ${message.author.tag}`, message.author.avatarURL)
@@ -24,5 +25,5 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
-    name: 'user'
+    name: 'perfil'
 }
