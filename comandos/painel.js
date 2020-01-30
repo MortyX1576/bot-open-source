@@ -10,9 +10,9 @@ exports.run = async (client, message, args,Database) => {
         .setTitle('Informações do membro:')
         .setColor('#a118da')
         .addField(`• Seu nome:`, `${dados.nome}`, true)
-        .addField(`• Seu level:`, `${dados.level}`, true)
         .addField(`• Sua senha:`, `||${dados.senha}||`, true)
         .addField(`• XP:`, `${dados.xp}`, true)
+        .addField(`• Seu level:`, `${dados.level}`, true)
         .addField(`• Sua tag:`, `${dados.tag}`, true)
 
 message.author.send(embed)

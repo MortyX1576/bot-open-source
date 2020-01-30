@@ -71,13 +71,13 @@ client.on("message", async message => {
   Database.Usuarios.findOne({ "_id": message.author.id}, function (erro, dados) { 
   if(dados) {
   dados.xp += Math.floor(Math.random() * 10) + 1;
+  dados.save();
   if(dados.xp >= 400){
   dados.xp = 0;
+  message.channel.send(`:2990_yes: | Você upou para o level ${dados.level}, parabéns!`)
   dados.level += 1;
-  message.channel.send(`🎉 | Parabéns ${message.author}`)
   dados.save();
   }
-  dados.save();
   }})
   Database.Guilds.findOne({ "_id": message.guild.id}, function (erro, documento) { 
   if (documento) {   

@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
 
     
     const embed = new Discord.RichEmbed()
-    .setDescription(`Informações do: ${member}!`)
+    .setTitle(`Informações do: ${member}!`)
     .addField('Usúario:', `${member}`)
     .addField('Id:', `ainda vou botar`)
     .addField('Data que entrou no servidor:', `ainda vou terminar`)

@@ -31,8 +31,8 @@ var Base = new Schema({
   _id: { type: String, required: true },
   nome: { type: String, required: true },
   senha: { type: String, required: true },
-  level: { type: String },
-  xp: { type: String },
+  level: { type: Number },
+  xp: { type: Number },
   tag: { type: String },
   logado: {type: Boolean},
   idlogado: {type: String}
