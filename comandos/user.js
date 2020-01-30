@@ -14,9 +14,10 @@ exports.run = (client, message, args) => {
     .addField('Status:', `**${on}**`, true) 
     .addField('Data que entrou no servidor:', `ainda vou terminar`)
     .addField('Criou a conta em:', `ainda vou terminar`)
+    .addField('Roles:', `${member.joinedAt}`)
     .setThumbnail(member.user.avatarURL)
     .setColor('GOLD')
-    .setFooter(`Quem executou: ${message.author.tag}`, message.author.avatarUR)
+    .setFooter(`Quem executou: ${message.author.tag}`, message.author.avatarURL)
 
      message.channel.send(embed)
 
