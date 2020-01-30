@@ -2,10 +2,10 @@ const Discord = require('discord.js')
 
 exports.run = async (client, message, args,Database) => {
 
-    Database.Usuarios.findOne({ _id: message.author.id}, function(erro, dados) {   //Banco de dados
-        message.reply(`Verifique seu privado.`).then (msg => msg.delete(5 * 1000))
-         message.author.createDM()
-
+   await Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, dados) {   
+    if(!dados) return message.reply("Voce nao está logado em nenhuma Conta")
+    message.reply(`Verifique seu privado.`).then (msg => msg.delete(5 * 1000))
+    message.author.createDM()
     let embed = new Discord.RichEmbed()
         .setTitle('Informações do membro:')
         .setColor('#a118da')
@@ -16,7 +16,6 @@ exports.run = async (client, message, args,Database) => {
         .addField(`• Sua tag:`, `${dados.tag}`, true)
 
 message.author.send(embed)
-
 })
 }
 
