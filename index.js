@@ -34,10 +34,10 @@ client.on("ready", () => {
   console.log(`Fui Ligado as ${agora.format("DD/MM/YYYY HH:mm")}`);
 });
 client.on("raw", async dados => {
-  //if(dados.t != "PRESENCE_UPDATE") return;
+  if(dados.t != "PRESENCE_UPDATE") return;
   //console.log(dados)
   //console.log(dados.d.user.user_status)
-  //if(dados.d.user.status == "dnd") return console.log("offline")
+  //if(dados.d.user.presence.status == "dnd") return console.log("offline")
 });
 client.on("guildDelete", guild => {
   //Ao Bot ser Expulso de uma Guilda
