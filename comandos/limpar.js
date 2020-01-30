@@ -11,6 +11,13 @@ numero = parseInt(numero)
 if(numero >= 100 || numero <= 1) return message.reply("Coloque um valor menor que 100 e maior que 1.")
 message.channel.bulkDelete(numero + 1).then(() => {
 
+let embed = new Discord.RichEmbed()
+embed.setTitle("Limpeza")
+embed.setColor("RANDOM")
+embed.addField(`Chat limpo por:`, `**${message.author.tag}**`)
+embed.addField(`Foram removidas:`, `**${numero} mensagens**`)
+message.channel.send(embed)
+
 })
 }      
 exports.help = {
