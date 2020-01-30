@@ -75,7 +75,7 @@ client.on("message", async message => {
   if(dados.xp >= 400){
   dados.xp = 0;
   dados.level += 1;
-  message.channel.send(`🎊 | Você upou para o level ${dados.level}, parabéns!`)
+  message.reply(`🎊 | Você upou para o level ${dados.level}, parabéns!`)
   dados.save();
   }
   }})
