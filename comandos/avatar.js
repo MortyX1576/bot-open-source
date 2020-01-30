@@ -7,7 +7,6 @@ exports.run = (client, message, args) => {
     .setDescription(`Avatar do ${member}!`)
     .setColor('RANDOM')
     .setImage(member.user.avatarURL)
-    .setFooter(`Autor: ${message.author.username}`)
     .setTimestamp()
     message.channel.send(embed)
 
