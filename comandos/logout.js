@@ -3,12 +3,19 @@ let Perm;
 exports.run = async (client,message,args,Database) => {
 let ID,IDD;
 client.users.forEach(x =>{
-Database.Usuarios.findOne({ _id: x.id}, function(erro, result) {   
-//if(x.id == result.idlogado) return Perm = 1;
-  ID = message.author.id;IDD = x.id;
-  console.log(`Database ${IDD} Usuario$ {ID}`)  
-  console.log(result.idlogado)
+Database.Usuarios.findOne({_id: x.id}, function(erro, result) {   
+//if(x.id == result.idlogado) return Perm = 1;  
+  //if(result.idlogado == message.author.id)
+  console.log(result)
+  {  
+  ID = message.author.id;
+  IDD = x.id;
+ // }
+  //console.log(`Database ${IDD} Usuario$ {ID}`)  
 })})
+Database.Usuarios.findOne({_id: IDD}, function(erro, dados) {   
+console.log(dados)
+})
 /*if(Perm == 1)
 {
 Database.Usuarios.findOne({ _id: IDD}, function(erro, valor) {   
