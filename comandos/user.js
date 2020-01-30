@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setDescription(`**Informações:**`)
     .addField('Usúario:', `${member}`, true)
-    .addField('Id:', `{member.id}`, true)
+    .addField('Usúario:', `${member.id}`, true)
     .addField('Status:', `**${on}**`, true) 
     .addField('Data que entrou no servidor:', `ainda vou terminar`)
     .addField('Criou a conta em:', `ainda vou terminar`)
@@ -23,7 +23,5 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = {
-    name: 'prefixo'
-}  = {
-    name: 'perfil'
+    name: 'user'
 }
