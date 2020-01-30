@@ -9,7 +9,7 @@ Database.Usuarios.findOne({_id: x.id}, function(erro, result) {
 */
 await Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, valor) {   
 if(!valor) return message.reply("ERRO | Voce não está logado")
-message.channel.send(`📊 | ${message.author} Você não está mais Logado!`)
+message.channel.send(`📊 | ${message.author} Voce fez Logout na Conta ${valor.nome}`)
 Perm = 0;
 valor.idlogado = 0;
 valor.save();

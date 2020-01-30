@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     if (!member) return message.reply("Você não informou um membro válido!").then (msg => msg.delete(5 * 1000))
 
     const embed = new Discord.RichEmbed()
-    .setTitle(`Perfil do ${member}`)
+    .setTitle(`Perfil:`)
     .addField('Usúario:', `${member}`)
     .setImage(member.user.avatarURL)
     .setFooter(`Quem executou: ${message.author}`)
