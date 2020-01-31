@@ -8,8 +8,8 @@ Database.Usuarios.findOne({_id: x.id}, function(erro, result) {
 })})
 */
 await Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, valor) {   
-if(!valor) return message.reply("<:7685_no:671412271951380500> | Você não está logado.")
-message.channel.send(`<:2990_yes:671412271985065996> | Você fez logout na conta ${valor.nome}.`).then (msg => msg.delete(5 * 1000))
+if(!valor) return message.reply("você não está logado.").then (msg => msg.delete(5 * 1000))
+message.channel.send(`<:2990_yes:671412271985065996> | Você fez logout na conta ${valor.nome}!`).then (msg => msg.delete(5 * 1000))
 Perm = 0;
 valor.idlogado = 0;
 valor.save();
