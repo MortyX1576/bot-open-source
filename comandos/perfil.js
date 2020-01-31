@@ -1,5 +1,5 @@
 const Discord = require ('discord.js')
-
+const moment = require("moment");
 exports.run = (client, message, args) => {
 
     const member = message.mentions.members.first() || message.guild.members.get(args[0]);
@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     .addField('Usúario:', `${member}`, true)
     .addField('Id:', `${member.id}`, true)
     .addField('Status:', `**${on}**`, true) 
-    .addField('Data que entrou no servidor:', `${member.joinedAt}`)
+    .addField('Data que entrou no servidor:', `${member.user.joinedAt.moment.format("DD/MM/AAAA")}`)
     .addField('Roles:', `${cargos}`)
     .setThumbnail(member.user.avatarURL)
     .setColor('GOLD')
