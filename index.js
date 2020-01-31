@@ -71,7 +71,7 @@ client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
 client.on("guildMemberRemove", async member => {});
 client.on("message", async message => {  
-  Database.Usuarios.findOne({ "_id": message.author.id}, function (erro, dados) { 
+  Database.Usuarios.findOne({ "idlogado": message.author.id}, function (erro, dados) { 
   if(dados) {
   if(!TempoXP.has(message.author.id))
   {

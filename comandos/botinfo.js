@@ -11,22 +11,30 @@ const embed = new Discord.RichEmbed()
 .setDescription(`
 🛠 RAM Usada: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB
 ⏰ Uptime: ${duration}
-🚻 Usuarios: ${bot.users.size}
+
+🚻 Usuários: ${bot.users.size}
+
 📊 Servidores: ${bot.guilds.size.toLocaleString()}
+
 📡 Canais: ${bot.channels.size.toLocaleString()}
+
 🎥 Status: ${bot.user.presence.status}
+
 📠 Game: ${bot.user.presence.game}
+
 🧾 Discord.js: v${version}
+
 🗳 Uso CPU: ${Math.round(stats.cpu)}%
+
 📙 Node.js: ${process.version}
+
 🗃 Dependencies: ${Object.keys(require('../package').dependencies).length}
+
 🔉 Voz: ${bot.voiceConnections.size}`)
 .setColor('BLACK');  
 message.channel.send(embed);
 })
 }
 exports.help = {
-    name: 'infobot',
-    description: 'teste',
-    usage: 'teste'
+    name: 'botinfo'
 }

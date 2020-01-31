@@ -12,7 +12,7 @@ if(numero >= 100 || numero <= 1) return message.reply("Coloque um valor abaixo d
 message.channel.bulkDelete(numero + 1).then(() => {
 
 let embed = new Discord.RichEmbed()
-embed.setTitle("<:2990_yes:671412271985065996> | Você limpou o chat")
+embed.setDescription(`<:2990_yes:671412271985065996> | Você limpou o chat, foram limpadas ${numero} mensagens!`)
 embed.setColor("RANDOM")
 message.channel.send(embed).then (msg => msg.delete(5 * 1000))
 
