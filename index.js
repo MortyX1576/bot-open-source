@@ -7,6 +7,7 @@ const agora = moment();
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 let valor;
+let TempoXP= new Set();
 //Carregamento dos Comandos
 fs.readdir("./comandos/", (err, files) => {
   if (err) console.error(err);
@@ -29,11 +30,11 @@ process.on("uncaughtException", err => {
 */
 client.on("ready", () => {
   // Ao Bot ser Iniciado
-  
+  let hr = agora.format("DD/MM/YYYY HH:mm")
   console.log("BOT ONLINE");
   client.user.setActivity(`Estou Online!`, { type: "PLAYING" });
   console.log(`Fui Ligado as ${agora.format("DD/MM/YYYY HH:mm")}`);
-  client.channels.get('672874300184854528').send('```o Smash#5948 foi iniciado com sucesso!```')
+  client.channels.get('672874300184854528').send('```o Smash#5948 foi Iniciado com sucesso!```')
 });
 client.on("raw", async dados => {
   if(dados.t != "PRESENCE_UPDATE") return;
@@ -72,15 +73,23 @@ client.on("guildMemberRemove", async member => {});
 client.on("message", async message => {  
   Database.Usuarios.findOne({ "_id": message.author.id}, function (erro, dados) { 
   if(dados) {
+  if(!TempoXP.has(message.author.id))
+  {
   dados.xp += Math.floor(Math.random() * 10) + 1;
   dados.save();
+  TempoXP.add(message.author.id)
   if(dados.xp >= 400){
   dados.xp = 0;
   dados.level += 1;
   message.reply(`🎊 | Você upou para o level ${dados.level}, parabéns!`)
   dados.save();
   }
-  }})
+  setTimeout(() => {
+        TempoXP.delete(message.author.id);
+  }, 40000);      
+  } 
+  }
+  })
   Database.Guilds.findOne({ "_id": message.guild.id}, function (erro, documento) { 
   if (documento) {   
   valor = documento.prefix;

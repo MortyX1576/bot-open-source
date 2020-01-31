@@ -14,9 +14,8 @@ message.channel.bulkDelete(numero + 1).then(() => {
 let embed = new Discord.RichEmbed()
 embed.setTitle("Limpeza")
 embed.setColor("RANDOM")
-embed.addField(`Chat limpo por:`, `**${message.author.tag}**`)
-embed.addField(`Foram removidas:`, `**${numero} mensagens**`)
-message.channel.send(embed)
+embed.setTitle(`<:2990_yes:671412271985065996> | Você limpou o chat, foram removidas ${numero} mensagens.`)
+message.channel.send(embed).then (msg => msg.delete(5 * 1000))
 
 })
 }      
