@@ -4,10 +4,10 @@ exports.run = (client, message, args) => {
 
    let channel = message.guild.channels.get('672850878344200228')
 
-    const text = args[0].join(' ')
+    const text = args[0].split(' / ')
 
     const embed = new Discord.RichEmbed()
-    .setAuthor(`Sugestão do ${message.author}.`)
+    .setTitle(`Sugestão do ${message.author}.`)
     .setDescription(text)
     .setColor('DARK_AGUA')
     
