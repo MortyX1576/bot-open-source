@@ -29,9 +29,11 @@ process.on("uncaughtException", err => {
 */
 client.on("ready", () => {
   // Ao Bot ser Iniciado
+  
   console.log("BOT ONLINE");
   client.user.setActivity(`Estou Online!`, { type: "PLAYING" });
   console.log(`Fui Ligado as ${agora.format("DD/MM/YYYY HH:mm")}`);
+  client.channels.get('672874300184854528').send('```o Smash#5948 foi iniciado com sucesso!```')
 });
 client.on("raw", async dados => {
   if(dados.t != "PRESENCE_UPDATE") return;
