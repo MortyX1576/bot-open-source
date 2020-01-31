@@ -14,7 +14,6 @@ exports.run = async (client, message, args, Database) => {
     .setColor ("#00FF00")
     .setThumbnail(client.user.avatarURL)
     .setFooter("Smash ©")
-    
         message.author.send(embed3).then(async dados =>{
         await dados.react("672131751031734272");
         await dados.react("672134186739564584");                          

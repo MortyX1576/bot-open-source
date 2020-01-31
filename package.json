@@ -20,7 +20,8 @@
     "mongoose": "^5.8.10",
     "node": "^13.6.0",
     "node-fetch": "^2.6.0",
-    "weather": "^1.0.0"
+    "weather": "^1.0.0",
+    "pidusage": "^2.0.17"
   },
   "engines": {
     "node": "10.x"

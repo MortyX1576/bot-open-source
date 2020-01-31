@@ -1,11 +1,11 @@
 const Discord = require ('discord.js')
 
-exports.run = async (client, message) => {
+exports.run = (client, message) => {
   
   const embed = new Discord.RichEmbed()
-  .setTitle("Reiniciando o bot.")
+  .setDescription("Reiniciando o bot.")
   .setFooter(message.author.tag, message.author.avatarURL)
-  
+  message.channel.send(embed)  
 }
 exports.help = {
   name: 'r'
