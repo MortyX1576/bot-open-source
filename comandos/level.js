@@ -2,7 +2,7 @@ const Discord = require ('discord.js')
 
 exports.run = async (client,message,args,Database) => {
 Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, dados) {   
-if(!dados) return message.reply("Voce não está Logado")
+if(!dados) return message.reply("você não está logado!")
 
 message.channel.send(`Nível de **${message.author.username}**`)
 let embed = new Discord.RichEmbed()
