@@ -8,8 +8,8 @@ exports.run = (client, message, args) => {
 
     const embed = new Discord.RichEmbed()
     .setTitle(`Sugestão do ${message.author}.`)
-    .setDescription(text)
-    .setColor('DARK_AGUA')
+    .setDescription(`Sugestão: `+ text)
+    .setColor('BLUE')
     
     channel.send(embed)
 
