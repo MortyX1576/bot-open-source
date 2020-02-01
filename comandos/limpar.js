@@ -2,7 +2,14 @@ const Discord = require ('discord.js')
 
 exports.run = async (client,message,args) => {
 
-if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Você não tem permissão para ``Gerenciar mensagens``.").then (msg => msg.delete(3 * 1000))
+if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(embed1).then (msg => msg.delete(5 * 1000))
+  
+    const embed1 = new Discord.RichEmbed()
+    .setDescription("<:7685_no:671412271951380500> | Você não possui ``permissão`` para executar este comando.")
+    .setColor('RED')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp()
+  
 
 if(!args[0]) return message.reply("Use !limpar (quantidade).").then (msg => msg.delete(3 * 1000))
 let numero = args[0];
