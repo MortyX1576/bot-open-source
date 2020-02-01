@@ -10,7 +10,6 @@ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
   
-
 if(!args[0]) return message.reply("Use !limpar (quantidade).").then (msg => msg.delete(3 * 1000))
 let numero = args[0];
 if(isNaN(numero)) return message.reply("Coloque um valor válido.").then (msg => msg.delete(3 * 1000))

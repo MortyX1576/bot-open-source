@@ -12,9 +12,10 @@ exports.run = (client,message,args) => {
    const canal = client.channels.get("671460563594772500")
 
     const embed = new Discord.RichEmbed()
-    .setTitle("🔔 Alerta!")
-    .setDescription(`O membro **${member}** foi avisado pelo **${message.author}!**\nMotivo: **${reason}**`)
-    .setColor('BLUE')
+    .setTitle("🔔 Alerta")
+    .setDescription(`O membro **${member}** foi avisado pelo ${message.author}!\nMotivo: **${reason}**`)
+    .setColor('RED')
+    .setTimestamp()
     canal.send(embed)
 }
 
