@@ -6,10 +6,11 @@ exports.run = (client, message) => {
 
     const embed = new Discord.RichEmbed()
     .setTitle("Smash Money")
-    .addField('O saldo do @migueldeveloper é de:', ` ``R$45 reais.`` `)
+    .setDescription("saldo do @migueldeveloper é de: ``R$45 reais.`` ")
     .setThumbnail("https://img.favpng.com/12/14/9/money-saving-icon-png-favpng-gFFpk3KdkbkyeawSuATTsdSHR.jpg")
     .setColor('GOLD')
     .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp()
 
     message.channel.send(embed)
 }
