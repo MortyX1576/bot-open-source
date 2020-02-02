@@ -19,15 +19,15 @@ fs.readdir("./comandos/", (err, files) => {
   });
 });
 //Log Erro
-/*
+
 process.on("uncaughtException", err => {
   let p = err
     .toString()
     .trim()
     .split(/ +/g);
-  client.users.get("665200472596152341").send(p.join(" "));
-
-*/
+  //client.users.get("665200472596152341").send(p.join(" "));
+  client.channels.get("671385571561570333").send(p.join(" "))
+});
 client.on("ready", () => {
   // Ao Bot ser Iniciado
   let hr = agora.format("DD/MM/YYYY HH:mm")
