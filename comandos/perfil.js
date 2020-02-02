@@ -7,8 +7,9 @@ exports.run = async (client, message, args,Database) => {
      const embed1 = new Discord.RichEmbed()
      .setDescription()
        
-       let on = dados.presence.status.replace("dnd", "Ocupado").replace("idle", "Ausente").replace("offline", "Invisível").replace("online", "Disponível").replace("stream", "Transmitindo")
-     
+       let on = presence.status.replace("dnd", "Ocupado").replace("idle", "Ausente").replace("offline", "Invisível").replace("online", "Disponível").replace("stream", "Transmitindo")
+     // falta finalizar. by: miguelws
+       
      const embed = new Discord.RichEmbed()
     .setAuthor(`Informações do ${dados.nome}`)
     .addField('**• Dinheiro:**', dados.dinheiro, true)

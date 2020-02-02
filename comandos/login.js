@@ -16,7 +16,7 @@ if(dados.senha != args[1]) return message.reply("<:7685_no:671412271951380500> |
 Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, valor) {     
   console.log("2")
 if(valor) return message.reply("<:7685_no:671412271951380500> | **Você já está logado.**").then (msg => msg.delete(5 * 1000))
-message.channel.send(`<:2990_yes:671412271985065996> | Você logou na conta: ``${dados.nome}`` `).then (msg => msg.delete(5 * 1000))
+message.channel.send(`<:2990_yes:671412271985065996> | Você logou na conta: ${dados.nome} `).then (msg => msg.delete(5 * 1000))
 dados.logado = true;
 dados.idlogado = message.author.id;
 dados.save();

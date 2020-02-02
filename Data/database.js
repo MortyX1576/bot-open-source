@@ -39,7 +39,14 @@ var Base = new Schema({
   dinheiro: {type: Number},
   banco: {type: Number}
 });
+var Key = new Schema({
+nome: {type: String},
+max_usos: {type: Number},
+  
+});
 var Usuarios = mongoose.model("Usuarios", Base);
 var Guilds = mongoose.model("Guildas", Guilds);
+var Keys = mongoose.model("Keys", Key);
+exports.Keys = Keys;
 exports.Guilds = Guilds;
 exports.Usuarios = Usuarios;
