@@ -22,7 +22,9 @@ exports.run = async (client, message, args,Database) => {
       senha: `${c.content}`,
       xp: "0",
       level: "0",
-      logado: true
+      logado: true,
+      banco: 0,
+      dinheiro: 0
       }).save()
       })})})})}) //banco de dados
 };
