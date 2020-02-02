@@ -14,10 +14,12 @@ if(dados.idlogado > 0) return message.reply("<:7685_no:671412271951380500> | Alg
   console.log("1")
   
     const embedno = new Discord.RichEmbed()
-    .setTitle(":no_entry_sign: | Faltou a senha.")
+    .setDescription(":no_entry_sign: | Senha incorreta.")
     .setColor('RED')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp()
     
-if(dados.senha != args[1]) return message.channel.send(embedno).then (msg => msg.delete(5 * 1000))
+if(dados.senha != args[1]) return message.channel.send(embedno).then (msg => msg.delete(6 * 1000))
   
 Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, valor) {     
   console.log("2")
