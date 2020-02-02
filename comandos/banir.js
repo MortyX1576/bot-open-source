@@ -15,10 +15,16 @@ if(!membro.bannable) return message.reply("Eu não posso banir o usuário, o car
 const motivo = args.slice(1).join(' ')
 if(!motivo) return message.reply("Você não especificou um motivo")
 
+if (membro) {
+if (motivo) {
 const embed = new Discord.RichEmbed()
 embed.setTitle(":hammer: Banido")
 embed.setColor("RED")
-embed.setDescription(`**•** Usuário banido: **${membro}**\nb`)
+embed.setDescription(`**•** Usuário banido: **${membro}**\n**•** Banido por: ${message.author.tag}`)
+membro.ban()
+message.channel.send(embed)
+}
+}
 }
 exports.help = {
     name: 'banir'
