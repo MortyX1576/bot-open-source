@@ -8,7 +8,6 @@ exports.run = async (client, message, args,Database) => {
      .setDescription()
        
        let on = message.author.presence.status.replace("dnd", "Ocupado").replace("idle", "Ausente").replace("offline", "Invisível").replace("online", "Disponível").replace("stream", "Transmitindo")
-     // falta finalizar. by: miguelws
        
      const embed = new Discord.RichEmbed()
     .setAuthor(`Informações do ${dados.nome}`)

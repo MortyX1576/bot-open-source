@@ -2,7 +2,7 @@ const Discord = require ('discord.js')
 
 exports.run =async  (client, message, args,Database) => {
 
-    const member = message.mentions.members.first() || message.guild.members.get(args[0]);
+    const member = message.mentions.members.first() || message.member;
     await Database.Usuarios.findOne({_id: member.id}, function(erro, dados) {   
     if(dados)
     {
@@ -15,7 +15,7 @@ exports.run =async  (client, message, args,Database) => {
       
     const embed = new Discord.RichEmbed()
     .setTitle("💵 | Smash Money")
-    .setDescription(`Saldo do ${dados.nome} é de: ${dados.dinheiro}. `)
+    .setDescription(`Saldo do ${dados.nome} é de:` + ```${dados.dinheiro}```)
     .setThumbnail("https://img.favpng.com/12/14/9/money-saving-icon-png-favpng-gFFpk3KdkbkyeawSuATTsdSHR.jpg")
     .setColor('GOLD')
     .setFooter(message.author.tag, message.author.avatarURL)
