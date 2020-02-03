@@ -4,12 +4,15 @@ exports.run = async (client,message,args,Database) => {
 Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, dados) {   
 if(!dados) return message.reply(`você não está logado!`).then (msg => msg.delete(3 * 1000))
 
-message.channel.send(`Nível de **${message.author.username}**`)
 let embed = new Discord.RichEmbed()
-.setTitle(`Informações | ${message.guild.name}`)
-.setColor("RANDOM")
-.addField(`• Nível:`, `${dados.level}`)
-.addField(`• XP:`, `${dados.xp}`)
+.setTitle("Smash - Nível")
+.setDescription(`Abaixo está o xp e o level do ${message.author.username}!`)
+.setColor("GREEN")
+.addField(`• Nível:`, `\`\`\`${dados.level}\`\`\``) //dados.level
+.addField(`• Xp:`, `\`\`\`${dados.xp}\`\`\``, true) // dados.xp
+.setFooter(message.author.tag, message.author.avatarURL)
+.setTimestamp()
+
 message.channel.send(embed)
 
 })
