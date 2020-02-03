@@ -15,8 +15,10 @@ exports.run =async  (client, message, args,Database) => {
       
     const embed = new Discord.RichEmbed()
     .setTitle("Smash - Money")
-    .setDescription(`Saldo do ${dados.nome} é de:` + `${dados.dinheiro}`)
-    .setThumbnail("https://img.favpng.com/12/14/9/money-saving-icon-png-favpng-gFFpk3KdkbkyeawSuATTsdSHR.jpg")
+    .setDescription(`Você digitou um comando da economia. Abaixo está o saldo do ${dados.nome}!`)
+    .addField('Money:', `\`\`\`${dados.dinheiro}\`\`\``)
+    .addField('Banco:', `\`\`\`Tem que terminar.\`\`\``, true)
+    .setThumbnail("https://img.icons8.com/clouds/100/000000/money.png")
     .setColor('GOLD')
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
