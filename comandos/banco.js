@@ -1,6 +1,10 @@
-// sistema de banco, em desenvolvimento
-// miguel quando chegar vai fazer :v
-// preciso que o morty dps configure a db
-// ai é gg :v
-// tmj
-// vlw, flw =)
+const Discord = require ('discord.js')
+
+exports.run = (client, message, args) => {
+
+
+
+}
+exports.help = {
+    name: 'banco'
+}
