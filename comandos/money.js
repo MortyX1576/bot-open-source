@@ -14,8 +14,8 @@ exports.run =async  (client, message, args,Database) => {
     if (!member) return message.channel.send(embed1).then (msg => msg.delete(6 * 1000))
       
     const embed = new Discord.RichEmbed()
-    .setTitle("💵 | Smash Money")
-    .setDescription(`Saldo do ${dados.nome} é de:` + ```${dados.dinheiro}```)
+    .setTitle("Smash - Money")
+    .setDescription(`Saldo do ${dados.nome} é de:` + `${dados.dinheiro}`)
     .setThumbnail("https://img.favpng.com/12/14/9/money-saving-icon-png-favpng-gFFpk3KdkbkyeawSuATTsdSHR.jpg")
     .setColor('GOLD')
     .setFooter(message.author.tag, message.author.avatarURL)
