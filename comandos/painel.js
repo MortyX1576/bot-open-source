@@ -3,7 +3,14 @@ const Discord = require('discord.js')
 exports.run = async (client, message, args,Database) => {
 
    await Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, dados) {   
-    if(!dados) return message.reply("Voce nao está logado em nenhuma Conta")
+     
+    const embed1 = new Discord.RichEmbed()
+    .setDescription("Você não está logado em nenhuma conta.")
+    .setColor('RED')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp()
+     
+    if(!dados) return message.channel.send(embed1).then (msg => msg.delete(5 * 1000))
     message.reply(`Verifique seu privado.`).then (msg => msg.delete(5 * 1000))
     message.author.createDM()
     let embed = new Discord.RichEmbed()

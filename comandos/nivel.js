@@ -2,7 +2,14 @@ const Discord = require ('discord.js')
 
 exports.run = async (client,message,args,Database) => {
 Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, dados) {   
-if(!dados) return message.reply(`você não está logado!`).then (msg => msg.delete(3 * 1000))
+  
+    const embed1 = new Discord.RichEmbed()
+    .setDescription("Você não está logado!")
+    .setColor('RED')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp()
+  
+if(!dados) return message.channel.send(embed1).then (msg => msg.delete(6 * 1000))
 
 let embed = new Discord.RichEmbed()
 .setTitle("Smash - Nível")

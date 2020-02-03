@@ -4,7 +4,13 @@ exports.run = (client, message, args) => {
 
 const membro = message.mentions.members.first() || message.guild.members.get(args[0]);
 
-if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Você não tem permissão para banir membros!") //permissão pra banir
+     const embed1 = new Discord.RichEmbed()
+    .setDescription("Você não possui permissão para executar este comando.")
+    .setColor('RED')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp()
+  
+if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(embed1)//permissão pra banir
 
 if(membro === message.member) return message.reply("Você não pode banir a si mesmo.") //se banir o author da mensagem
 
