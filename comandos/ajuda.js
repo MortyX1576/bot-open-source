@@ -15,8 +15,7 @@ exports.run = async (client, message, args, Database) => {
     .setThumbnail(client.user.avatarURL)
     .setFooter("Smash ©")
         message.author.send(embed3).then(async dados =>{
-        await dados.react("672131751031734272");
-        await dados.react("672134186739564584");                          
+        await dados.react("672131751031734272");          
         let filtro1 = (reaction,usuario) => reaction.emoji.name === "672131751031734272" && usuario.id === message.author.id
         let filtro2 = (reaction,usuario) => reaction.emoji.name === "672134186739564584" && usuario.id === message.author.id
         let collector1 = dados.createReactionCollector(filtro1, {max: 2, time: 2*60*1000})
@@ -24,6 +23,8 @@ exports.run = async (client, message, args, Database) => {
         
         collector1.on('collect', reaction=>{
         if(reaction.emoji.name === "672131751031734272")
+        dados.react("672134186739564584")
+
         {
         const embed1 = new Discord.RichEmbed()
         .setDescription("<:seoandweb:672131751031734272> | Menu de comandos\nO meu prefix é: `!`\n\n`role` `registro` `warn` `ajuda` `info`")
