@@ -7,14 +7,14 @@ exports.run = (client, message, args) => {
 
     const fotos = "https://media.giphy.com/media/udiIFmPkJQzkI/giphy.gif"
 
-    let numeros = [(numeros > 1 && numeros < 100)]
+    var numeros = (' ')
     if (numeros > 1 && numeros < 100) {
 //pera
     const embed = new Discord.RichEmbed()
     .setTitle("Viva o amor ❤️")
     .setDescription(`O amor entre ${member0} e ${member1} é `+numeros[Math.floor(Math.random())])
     .setImage(fotos)
-    .setColor('WHITE')
+    .setColor('RED')
     
     message.channel.send(embed)
 
