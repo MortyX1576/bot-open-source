@@ -7,16 +7,18 @@ exports.run = (client, message, args) => {
 
     const fotos = "https://media.giphy.com/media/udiIFmPkJQzkI/giphy.gif"
 
-    let cem = ['100%']
-    let oitenta = ['80%']
-    let numeros = [cem, oitenta]
+    let numeros = [(numeros > 1 && numeros < 100)]
+    if (numeros > 1 && numeros < 100) {
+//pera
     const embed = new Discord.RichEmbed()
     .setTitle("Viva o amor ❤️")
-    .setDescription(`O amor entre ${member0} e {member1} é`+numeros[Math.floor(Math.random() * numeros.length)])
+    .setDescription(`O amor entre ${member0} e ${member1} é `+numeros[Math.floor(Math.random())])
     .setImage(fotos)
-
+    .setColor('WHITE')
+    
     message.channel.send(embed)
 
+}
 }
 
 exports.help = {
