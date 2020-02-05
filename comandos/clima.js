@@ -3,10 +3,10 @@ const Discord = require ('discord.js');
 
 exports.run = (client, message, args) => {
   
-  weather.find({search: args[0], degreeType: 'F'}, function(err, result) {
+  weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
   if(err) message.channel.send(err);
     
-    message.channel.send(JSON.stringify(result, null, 2))
+    console.log(JSON.stringify(result, null, 2))
 });
   
   
