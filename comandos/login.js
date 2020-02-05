@@ -24,11 +24,11 @@ Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, valor) {
   
     const embedl = new Discord.RichEmbed()
     .setDescription(`Você já está logado.`)
-    .setColor('#f')
+    .setColor('RED')
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp() // embed 
   
-if(valor) return message.reply("<:7685_no:671412271951380500> | **Você já está logado.**").then (msg => msg.delete(5 * 1000))
+if(valor) return message.channel.send(embedl).then (msg => msg.delete(5 * 1000))
   
       const embed = new Discord.RichEmbed()
     .setDescription(`Você fez logou na conta \`${dados.nome}\`!`)
