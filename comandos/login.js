@@ -20,9 +20,23 @@ if(dados.idlogado > 0) return message.reply("<:7685_no:671412271951380500> | Alg
     
 if(dados.senha != args[1]) return message.channel.send(embedno).then (msg => msg.delete(6 * 1000))
   
-Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, valor) {     
+Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, valor) {   
+  
+    const embedl = new Discord.RichEmbed()
+    .setDescription(`Você já está logado.`)
+    .setColor('#f')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp() // embed 
+  
 if(valor) return message.reply("<:7685_no:671412271951380500> | **Você já está logado.**").then (msg => msg.delete(5 * 1000))
-message.channel.send(`<:2990_yes:671412271985065996> | Você logou na conta: ${dados.nome} `).then (msg => msg.delete(5 * 1000))
+  
+      const embed = new Discord.RichEmbed()
+    .setDescription(`Você fez logou na conta \`${dados.nome}\`!`)
+    .setColor('#ff6767')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp() // embed 
+  
+message.channel.send(embed).then (msg => msg.delete(5 * 1000))
 dados.logado = true;
 dados.idlogado = message.author.id;
 dados.save();
