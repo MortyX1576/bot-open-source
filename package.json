@@ -24,7 +24,8 @@
     "pidusage": "^2.0.17",
     "weather": "^1.0.0",
     "canvas": "^2.6.1",
-    "node-superfetch": "^0.1.10"
+    "node-superfetch": "^0.1.10",
+    "weather-js": "^2.0.0"
   },
   "engines": {
     "node": "10.x"
