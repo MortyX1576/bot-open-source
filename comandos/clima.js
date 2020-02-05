@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
   weather.find({search: args.join(" "), degreeType: 'F'}, function(err, result) {
   if(err) message.channel.send(err);
     
-    if (result.length=== 0) {
+    if (result.lenght === 0) {
         message.channel.send("Coloque uma localização correta.").then (msg => msg.delete(5 * 1000))
         return;
     }
@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
     const embed = new Discord.RichEmbed()
     .setAuthor(`Tempo de ${current.observationpoint}`)
     .addField('Fuso horário:', `${location.timezone}`, true)
-    .addField('Temperatura:', `${current.temperature}`, true)
+    .addField('Temperatura:',`${current.temperature}° C`, true)
     .addField('Umidade:', `${current.humidity}%`, true)
     .addField('Clima:', `${current.skytext}`, true)
     .addField('Velocidade do vento:', `${current.windspeed}`, true)
