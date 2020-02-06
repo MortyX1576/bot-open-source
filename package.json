@@ -25,6 +25,7 @@
     "node-fetch": "^2.6.0",
     "node-superfetch": "^0.1.10",
     "pidusage": "^2.0.17",
+    "request": "^2.88.0",
     "weather": "^1.0.0",
     "weather-js": "^2.0.0"
   },
