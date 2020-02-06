@@ -17,6 +17,7 @@
     "fs": "^0.0.2",
     "jimp": "^0.9.3",
     "lowdb": "^1.0.0",
+    "minecraft-server-util": "^1.1.0",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
     "mongoose": "^5.8.10",
