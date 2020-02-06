@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 
         body = JSON.parse(body);
         const mensagem = {
-            true: ':heavy_check_mark: Online',
+            true: '🔸 Online',
             false: ':x: Offline'
         };
         const status = mensagem[body.online];
@@ -16,6 +16,7 @@ module.exports.run = async (bot, message, args) => {
 
         let embed = new Discord.RichEmbed()
             .setAuthor(`Harmony`, `https://eu.mc-api.net/v3/server/favicon/jogar.redeharmony.com`)
+            .setDescription("Conecte-se em: **jogar.redeharmony.com!**")
             .setThumbnail(`https://eu.mc-api.net/v3/server/favicon/jogar.redeharmony.com`)
             .addField("Versão:", body.server.name)
             .addField("Status:", status, true)
