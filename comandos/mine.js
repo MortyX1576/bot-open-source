@@ -1,10 +1,12 @@
 const ping = require('minecraft-server-util');
+const Discord = require ('discord.js')
  
+
 // Callback
-ping('play.hypixel.net', 25565, (error, response) => {
+ping('play.hypixel.net', 25565, (error, response, message) => {
     if (error) throw error;
  
-    console.log(response);
+    message.channel.send(response);
 });
  
 // Promise
@@ -19,7 +21,7 @@ ping('play.hypixel.net', 25565)
 ping('play.hypixel.net', 25565, { protocolVersion: 498, connectTimeout: 1000 * 10 }, (error, response) => {
     if (error) throw error;
  
-    console.log(response);
+    console.logresponse);
 });
  
 // Promise - with options
