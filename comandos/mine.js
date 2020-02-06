@@ -29,3 +29,7 @@ ping('play.hypixel.net', 25565, { protocolVersion: 498, connectTimeout: 1000 * 1
     .catch((error) => {
         throw error;
     });
+
+exports.help = {
+  name: 'mine'
+}
