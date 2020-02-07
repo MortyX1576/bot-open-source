@@ -7,7 +7,6 @@ exports.run = async (bot, message, args) =>
     try {
       evaled = await eval(args.join(' '));
       
-      const embed = new Discord
       message.channel.send(inspect(evaled));
       //console.log(inspect(evaled));
     }
