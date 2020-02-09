@@ -8,7 +8,7 @@ exports.run = async (client, message) => {
         const embed = new Discord.RichEmbed()
         .setDescription("Exemplo.")
     
-        message.author.send(embed).then(async dados =>{ 
+        message.author.send(embed).then(async dados =>{
         await dados.react("⚙️");    
         await dados.react("🙂");                        
         let filtro1 = (reaction,usuario) => reaction.emoji.name === "⚙️" && usuario.id === message.author.id
@@ -24,14 +24,16 @@ exports.run = async (client, message) => {
         .setDescription("Exemplo 1.")
         dados.edit(embed1) // ai aqui 'ele' vai editar a embed principal e vai substituir por essa..
         }
+
         collector2.on('collect', reaction=>{
-        if(reaction.emoji.name === "🙂")
-        const embed1 = new Discord.RichEmbed()
-        .setDescription("Exemplo 2.")
-        dados.edit(embed1)
-
-})})})};
-
+         if(reaction.emoji.name === "⚙️") // 
+         {
+         const embed2 = new Discord.RichEmbed()
+         .setDescription("Exemplo 1.")
+         dados.edit(embed2) 
+         }
+   })})
+})}
 exports.help = {
   name: 'dm'
 }
