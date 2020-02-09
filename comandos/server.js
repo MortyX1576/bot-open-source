@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 var request = require('request');
 
 module.exports.run = async (bot, message, args) => {
-    let url = "http://mcapi.us/server/status?ip=jogar.redeharmony.com"
+    let url = "http://mcapi.us/server/status?ip=mc.hypixel.net"
     request(url, function (err, response, body) {
 
 
@@ -15,9 +15,9 @@ module.exports.run = async (bot, message, args) => {
 
 
         let embed = new Discord.RichEmbed()
-            .setAuthor(`Harmony`, `https://eu.mc-api.net/v3/server/favicon/jogar.redeharmony.com`)
-            .setDescription("Conecte-se em: **jogar.redeharmony.com!**")
-            .setThumbnail(`https://eu.mc-api.net/v3/server/favicon/jogar.redeharmony.com`)
+            .setAuthor(`Streen`, `https://eu.mc-api.net/v3/server/favicon/mc.hypixel.net`)
+            .setDescription("Conecte-se em: **Colocar o ip aqui!**")
+            .setThumbnail(`https://eu.mc-api.net/v3/server/favicon/2mc.hypixel.net`)
             .addField("Versão:", body.server.name)
             .addField("Status:", status, true)
             .addField("Jogadores online:", body.players.now + "/" + body.players.max, true)
