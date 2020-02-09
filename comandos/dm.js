@@ -1,20 +1,36 @@
-const Discord = require("discord.js");
-exports.run = async (client, message) => {
+const Discord = require ('discord.js')
 
-   const embed = new Discord.RichEmbed()
-   .setDescription("a")
+exports.run = async (client, message,args) => {
 
-  message.author.send(embed).then(x =>{  
-  x.react("📤")
-  let filtro = (reaction,usuario) => reaction.emoji.name === "📤" && usuario.id === message.author.id;
-  const coletor = x.createReactionCollector(filtro, {max: 1, time: 60000});     
-  coletor.on("collect", msg1 =>{            
+     await message.author.createDM()
+     message.channel.send(`${message.author}, olhe sua caixa de mensagens!`)
 
-   const embed1 = new Discord.RichEmbed()
-   .setDescription("a")
-   message.edit(embed)
-})})}
+    const embed3 = new Discord.RichEmbed()
+    .setTitle("Teste")   
+    .setDescription("David é lindo!")
+    .setTimestamp()
+    
+        message.channel.send(embed3).then(async dados =>{
+        await dados.react("🎮");
+                         
+        let filtro1 = (reaction,usuario) => reaction.emoji.name === "🎮" && usuario.id === message.author.id
+
+        let collector1 = dados.createReactionCollector(filtro1, {max: 1, time: 2*60*1000})
+
+        collector1.on('collect', reaction=>{
+        if(reaction.emoji.name === "⚙️")
+        {
+        const embed1 = new Discord.RichEmbed()
+        .setTitle("Teste.")
+        .setDescription("Eae mano, miguelws é lindão!")
+        dados.edit(embed1)
+        // <a:RingingBell:671788063063670824>
+// a:loading:671469442957574214>
+        }}) // Coletor 1
+       
+})
+}
 
 exports.help = {
-  name: "dm"
+  name: 'dm'
 }
