@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 exports.run = async (client, message) => {
   
   await message.author.createDM(); // cria uma dm
-
   // embed "principal"
   const embed = new Discord.RichEmbed().setDescription('Exemplo.');
 
