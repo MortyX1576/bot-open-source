@@ -1,7 +1,7 @@
 const Discord = require ('discord.js')
 
 exports.run = async (client, message) => {
-
+  
         message.author.createDM() // cria uma dm
 
         // embed "principal"
@@ -26,7 +26,7 @@ exports.run = async (client, message) => {
         }
 
         collector2.on('collect', reaction=>{
-         if(reaction.emoji.name === "⚙️") // 
+         if(reaction.emoji.name === "🙂") 
          {
          const embed2 = new Discord.RichEmbed()
          .setDescription("Exemplo 1.")
@@ -34,6 +34,7 @@ exports.run = async (client, message) => {
          }
    })})
 })}
+
 exports.help = {
   name: 'dm'
 }
