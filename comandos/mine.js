@@ -7,19 +7,19 @@ module.exports.run = async (bot, message, args) => {
   var embed1 = new Discord.RichEmbed()
   
   .setColor(0x151515)
-  .setTitle(`**Streen**`)
+  .setTitle(`**Arcanium** | Minecraft`)
 .setThumbnail(bot.user.displayAvatarURL)
 .setDescription(`Reaja com o emoji para ver sua **Skin, Head & Body**\n\n<:head:670290274416853002> | Head\n<:body:670290274744008754> | Body\n<:skin:670290274618048542> | Skin\n<:capa:670371369791389726> | Capa\n\n`)
 .setFooter(`© Arcanium`)
     
       message.channel.send(embed1).then(async msg => {
     
-      await msg.react('670290274416853002')
+      await msg.react('🙂')
           await msg.react('670290274744008754')
             await msg.react('670290274618048542')
                 await msg.react('670371369791389726')
 
-  const admfilterOPA = (reaction, user) => reaction.emoji.id === '670290274416853002' && user.id === message.author.id;
+  const admfilterOPA = (reaction, user) => reaction.emoji.id === '🙂' && user.id === message.author.id;
   const admOPA = msg.createReactionCollector(admfilterOPA, { time: 240000 })
   
   //Referente ao emoji: 👤
@@ -30,8 +30,8 @@ module.exports.run = async (bot, message, args) => {
   
       .setColor(0x151515)  
       .setTitle(`**Arcanium**`)
-      .setDescription(`Mostrando HEAD do Jogador: **${args}**`)
-      .setImage(`https://minotar.net/avatar/${args}`)
+      .setDescription(`Mostrando HEAD do Jogador: **${args[0]}**`)
+      .setImage(`https://minotar.net/avatar/${args[0]}`)
       .setFooter(`© Arcanium`)
   
   await msg.edit(emoji1)
