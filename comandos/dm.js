@@ -10,18 +10,18 @@ exports.run = async (client, message) => {
   message.author.send(embed).then(async dados => {
     await dados.react('⚙️');
     await dados.react('🙂');
-    let filtro = (reaction, usuario) => (reaction.emoji.name === '⚙️' || reaction.emoji.name === '🙂') && usuario.id === message.author;
-    let collector = dados.createReactionCollector(filtro, { max: 1, time: 2 * 60 * 1000 });
+    let filtro = (reaction, usuario) => (reaction, usuario) => reaction.emoji.name && usuario.id === message.author.id;
+    let collector = dados.createReactionCollector(filtro, { max: 10, time: 2 * 60 * 1000 });
 
     // se o usúario reagiu ao emoji, ele vai coletar
     collector.on('collect', reaction => {
       if (reaction.emoji.name === '⚙️') {
         //
-        const embed1 = new Discord.RichEmbed().setDescription('Exemplo 1.');
-        dados.edit(embed1); // ai aqui 'ele' vai editar a embed principal e vai substituir por essa..
+        embed.description = 'Exemplo 1'
+        dados.edit(embed); // ai aqui 'ele' vai editar a embed principal e vai substituir por essa..
       } else if (reaction.emoji.name === '🙂') {
-        const embed2 = new Discord.RichEmbed().setDescription('Exemplo 2.');
-        dados.edit(embed2);
+        embed.description = 'Exemplo 2'
+        dados.edit(embed);
       }
     });
   });
