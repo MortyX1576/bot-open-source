@@ -6,9 +6,12 @@ exports.run = async (bot, message, args) =>
     let evaled;
     try {
       evaled = await eval(args.join(' '));
-      
-      message.channel.send(inspect(evaled));
-      //console.log(inspect(evaled));
+      const embed = new Discord.RichEmbed()
+      .setDescription(`
+      Entrada: ${args}
+      Saida: ${inspect(evaled)} 
+      `)
+      message.channel.send(embed);
     }
     catch (error) {
       console.error(error);
