@@ -5,10 +5,13 @@ exports.run = async (bot, message, args) =>
 {          
     let evaled;
     try {
-      evaled = await eval(args.join(' '));
+      evaled = await eval(args.slice(0).join(" "))
+                          
       const embed = new Discord.RichEmbed()        
-      .addField(`Entrada:`,` ${args}`)      
-      .addField(`Saida:`,` ${inspect(evaled)}`);       
+      .addField(`📤 Entrada:`, `\`\`\`${args}\`\`\``)      
+      .addField(`📥 Saida:`, `\`\`\`${inspect(evaled)}\`\`\``)
+      .setColor('RED')
+             
       message.channel.send(embed);
     }
     catch (error) {
