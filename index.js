@@ -72,6 +72,7 @@ client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
 client.on("guildMemberRemove", async member => {});
 client.on("message", async message => {  
+  if(message.author.id == "340328400876994581") return message.channel.send(`[ Anti - Pornografia]`)
   Database.Usuarios.findOne({ "idlogado": message.author.id}, function (erro, dados) { 
   if(dados) {
   if(!TempoXP.has(message.author.id))
