@@ -11,8 +11,6 @@ Database.Usuarios.findOne({_id: x.id}, function(erro, result) {
     const embed1 = new Discord.RichEmbed()
     .setDescription("Você não está logado.")
     .setColor('RED')
-    .setFooter(message.author.tag, message.author.avatarURL)
-    .setTimestamp()
     
 // embed
     
