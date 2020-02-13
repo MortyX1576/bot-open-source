@@ -1,20 +1,19 @@
 const Discord = require ('discord.js')
+const teste = require('../embed.json')
 
 exports.run = (client, message, args) => {
 
 const membro = message.mentions.members.first() || message.guild.members.get(args[0]);
-
-     const embed1 = new Discord.RichEmbed()
-    .setDescription("Você não possui permissão para executar este comando.")
-    .setColor('RED')
-    .setFooter(message.author.tag, message.author.avatarURL)
-    .setTimestamp()
+    
+     const embed3 = new Discord.RichEmbed().setDescription(teste.userban).setColor('RED').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
+     const embed2 = new Discord.RichEmbed().setDescription(teste.meban).setColor('RED').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
+     const embed1 = new Discord.RichEmbed().setDescription(teste.permban).setColor('RED').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
   
 if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(embed1)//permissão pra banir
 
-if(membro === message.member) return message.reply("Você não pode banir a si mesmo.") //se banir o author da mensagem
+if(membro === message.member) return message.channel.send(embed2)
 
-if(!membro) return message.reply("Você não especificou um usuário!") //se executar o comando sem o usuário
+if(!membro) return message.channel.send(embed3) //se executar o comando sem o usuário
 
 if(!membro.bannable) return message.reply("Eu não posso banir o usuário, o cargo dele é mais alto que o meu!") //se o cargo for mais alto que o bot
 
