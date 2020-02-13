@@ -72,7 +72,10 @@ client.on("messageReactionAdd", (reaction, user) => {});
 client.on("guildMemberAdd", async member => {});
 client.on("guildMemberRemove", async member => {});
 client.on("message", async message => {  
-  if(message.author.id == "340328400876994581") return message.channel.send(`[ Anti - Pornografia]`)
+  /*if(message.author.id == "535979258850443284") {
+  message.channel.send(`[ Anti - Pornografia] O Bot ${message.author} Está Bloqueado!`)
+  message.delete();
+  }*/
   Database.Usuarios.findOne({ "idlogado": message.author.id}, function (erro, dados) { 
   if(dados) {
   if(!TempoXP.has(message.author.id))
