@@ -1,6 +1,6 @@
 {
 "embed": "Teste",
-"meban": "Você não pode se banir.",
+"meban": "você nã pode se banir.",
 "permban": "Você não possui permissão para executar este comando.",
-"userban": "**Você não especificou o usuário.**"
+"userban": "especifique o usuário."
 }
