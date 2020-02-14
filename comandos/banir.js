@@ -9,13 +9,11 @@ const membro = message.mentions.members.first() || message.guild.members.get(arg
      const embed2 = new Discord.RichEmbed().setDescription(teste.meban).setColor('RED').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
      const embed1 = new Discord.RichEmbed().setDescription(teste.permban).setColor('RED').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
   
-if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(embed1)//permissão pra banir
+if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(embed1).then(msg => msg.delete(7 * 1000)) //permissão pra banir
 
-if(membro === message.member) return message.channel.send(embed2)
+if(membro === message.member) return message.channel.send(embed2).then(msg => msg.delete(7 * 1000)) 
 
-if(!membro) return message.channel.send(embed3) //se executar o comando sem o usuário
-
-if(!membro.bannable) return message.reply("Eu não posso banir o usuário, o cargo dele é mais alto que o meu!") //se o cargo for mais alto que o bot
+if(!membro) return message.channel.send(embed3).then(msg => msg.delete(7 * 1000)) //se executar o comando sem o usuário
 
 const motivo = args.slice(1).join(' ')
 if(!motivo) return message.reply("Você não especificou um motivo")
