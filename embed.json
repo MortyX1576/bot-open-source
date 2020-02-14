@@ -3,5 +3,6 @@
 "meban": "você não pode se auto banir.",
 "permban": "Você não possui permissão para executar este comando.",
 "userban": "especifique o usuário.",
-"number": "Coloque um valor válido.."
+"number": "Coloque um valor válido..",
+"helpc": "Use !limpar <quantidade>"
 }
