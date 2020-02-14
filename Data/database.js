@@ -1,5 +1,13 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
+var serviceSchema = new Schema({
+   name: String
+})
+var serviceUserSchema = new Schema({
+   //Mapeando su-doc service simples. 
+   service: {type: mongoose.Schema.Types.ObjectId, ref: 'services'},
+   price: Number
+})
 mongoose
   .connect(
     "mongodb+srv://Admin:Admin123@smash-unuhz.gcp.mongodb.net/test?retryWrites=true&w=majority",
@@ -24,7 +32,8 @@ var Guilds = new Schema({
   _id: { type: String, required: true },
   prefix: { type: String, default: "!"},
   cargo: { type: String, defaul: "0" },
-  canal: { type: String, defaul: "0" }
+  canal: { type: String, defaul: "0" },
+  autorizados: [serviceUserSchema]
 });
 //Database usuarios
 var Base = new Schema({
