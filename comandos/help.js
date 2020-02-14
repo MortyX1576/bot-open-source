@@ -8,6 +8,7 @@ exports.run = (client, message) => {
     .addField('🔑 Utilidades:', "``clima`` ``avatar`` ``calcular`` ``info`` ``login`` ``logout`` ``nivel``\n``painel`` ``perfil`` ``prefixo`` ``registro``")
     .addField('💸 Economia', "``saldo`` ``daily`` ``addgrana``")
     .addField('🖥️ Desenvolvedores:', "``eval`` ``botinfo``")
+    .setThumbnail(client.user.avatarURL)
     .setColor('#00FFFF')
 
     message.channel.send(embed)

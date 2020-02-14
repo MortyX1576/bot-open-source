@@ -1,25 +1,30 @@
 const Discord = require('discord.js')
 const { inspect } = require('util');
 
-exports.run = async (bot, message, args) => 
-{          
+  exports.run = async (bot, message, args) => {
+
     let evaled;
     try {
-      evaled = await eval(args.join(''))      
-      
+      evaled = await eval(args.join(' '));
       const embed = new Discord.RichEmbed()        
-      .addField(`📤 **Entrada:**`, `\`\`\`${args.join(' ')}\`\`\``)      
-      .addField(`📥 **Saida:**`, `\`\`\`${inspect(evaled)}\`\`\``)
-      .setColor('RED')
+      .addField(`📥 Entrada:`, `\`\`\`cs\n${args.join(' ')}\`\`\``)      
+      .addField(`📤 Saida:`, `\`\`\`cs\n${inspect(evaled)}\`\`\``) // `\`\`\`cs\nRoochhan#9077\`\`\`` // ${inspect(evaled)}
+      .setColor('#00FFFF')
       .setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
              
       message.channel.send(embed);
+
     }
     catch (error) {
-      console.error(error);
-      message.reply("houve um erro durante a avaliação");
-    }  
-}
+      console.error(error)
+        const embed1 = new Discord.RichEmbed()        
+        .setDescription("Houve um erro no eval!")
+        .setFooter(message.author.tag, message.author.avatarURL).setColor('RED').setTimestamp()       
+
+        message.channel.send(embed1).then(msg => msg.delete(5 * 1000))
+      }  
+  };
+
 exports.help = {
-    name: 'eval'  
+  name: 'eval'
 }
