@@ -18,8 +18,8 @@ const { inspect } = require('util');
     catch (error) {
       console.error(error)
         const embed1 = new Discord.RichEmbed()        
-        .setDescription("Houve um erro no eval!")
-        .setFooter(message.author.tag, message.author.avatarURL).setColor('RED').setTimestamp()       
+        .setDescription("Houve um erro no eval, tente novamente..")
+        .setFooter(message.author.tag, message.author.avatarURL).setColor('RANDOM').setTimestamp()       
 
         message.channel.send(embed1).then(msg => msg.delete(5 * 1000))
       }  

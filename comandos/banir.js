@@ -6,8 +6,8 @@ exports.run = (client, message, args) => {
 const membro = message.mentions.members.first() || message.guild.members.get(args[0]);
     
      const embed3 = new Discord.RichEmbed().setDescription(`${message.author}, ${teste.userban}`).setColor('RANDOM').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
-     const embed2 = new Discord.RichEmbed().setDescription(teste.meban).setColor('RED').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
-     const embed1 = new Discord.RichEmbed().setDescription(`${message.author}, ${teste.permban}`).setColor('RED').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
+     const embed2 = new Discord.RichEmbed().setDescription(`${message.author}, ${teste.meban}`).setColor('RANDOM').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
+     const embed1 = new Discord.RichEmbed().setDescription(`${teste.permban}`).setColor('RANDOM').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
   
 if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(embed1).then(msg => msg.delete(7 * 1000))
   //permissão pra banir
