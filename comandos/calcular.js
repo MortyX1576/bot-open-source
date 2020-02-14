@@ -20,9 +20,9 @@ exports.run = (client, message, args) => {
         case "x": real = cal1 * cal2;
       }
 
-    const embed = new Discord.RichEmbed().setTitle("Calculadora")
-    .setDescription(`A resposta do seu \`\`cálculo\`\` é:\n\`\`\`${real}\`\`\``)
-    .setColor('#00FFFF')
+    const embed = new Discord.RichEmbed().setAuthor("Calculadora | Smash")
+    .setDescription(`Cálculo:\n\`\`\`${args.join(" ")}\`\`\`\nResposta:\n\`\`\`${real}\`\`\``)
+    .setColor('	#B0C4DE')
     .setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
 
     message.channel.send(embed)
