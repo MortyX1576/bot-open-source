@@ -6,8 +6,10 @@ exports.run = (client, message, args,Database) => {
   if(!member) return message.reply("Usuario Invalido")
   Database.Usuarios.findOne({ _id: member.id}, function(erro, valor) {    
   if(!valor) return message.reply("Usuario nao Cadastrado")
+  if(isNaN(args[1])) return message.reply("Coloque um valor em número!")
+    
   const embed = new Discord.RichEmbed()
-  .setDescription(`✅ | Você adicionou R$(${args[1]}) reais na conta do ${member}!`)
+  .setDescription(`✅ | Adicionado R$${args[1]} reais na conta do ${member}!`)
   .setColor('#00FF7F')  
   message.channel.send(embed).then (msg => msg.delete(6 * 1000)) 
   valor.dinheiro += args[1];
