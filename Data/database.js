@@ -5,9 +5,10 @@ var serviceSchema = new Schema({
 })
 var serviceUserSchema = new Schema({
    //Mapeando su-doc service simples. 
-   service: {type: mongoose.Schema.Types.ObjectId, ref: 'services'},
+   service: {type: mongoose.Schema.Types.ObjectId, ref: 'cargos'},
    price: Number
 })
+
 mongoose
   .connect(
     "mongodb+srv://Admin:Admin123@smash-unuhz.gcp.mongodb.net/test?retryWrites=true&w=majority",
@@ -33,7 +34,8 @@ var Guilds = new Schema({
   prefix: { type: String, default: "!"},
   cargo: { type: String, defaul: "0" },
   canal: { type: String, defaul: "0" },
-  autorizados: [serviceUserSchema]
+  autorizados: [serviceUserSchema],
+  teste: {type: String}
 });
 //Database usuarios
 var Base = new Schema({
