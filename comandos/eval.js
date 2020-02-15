@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const { inspect } = require('util');
 
-  exports.run = async (bot, message, args) => {
+  exports.run = async (bot, message, args, Database) => {
 
     let evaled;
     try {
