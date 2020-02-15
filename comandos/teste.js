@@ -3,7 +3,7 @@ const teste = require('../embed.json')
 
 exports.run = async (client, message, args, Database) => {    
     Database.Guilds.findOne({ _id: message.guild.id}, function(erro, dados) {  
-    let x = ["1","2","3"]   
+    let x =   
     dados.teste = x;
     dados.save();
     })
