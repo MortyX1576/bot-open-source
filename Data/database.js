@@ -34,8 +34,7 @@ var Guilds = new Schema({
   prefix: { type: String, default: "!"},
   cargo: { type: String, defaul: "0" },
   canal: { type: String, defaul: "0" },
-  autorizados: [serviceUserSchema],
-  teste: {type: String}
+  teste: {type: Array, defaul: []}
 });
 //Database usuarios
 var Base = new Schema({
