@@ -13,8 +13,7 @@ if(!dados) return message.channel.send(embed1).then (msg => msg.delete(6 * 1000)
 
 let embed = new Discord.RichEmbed()
 .setTitle("Smash - Nível")
-.setDescription(`Abaixo está o seu xp e level!`)
-.setColor("GREEN")
+.setDescription(``)
 .addField(`• Nível:`, `\`\`\`${dados.level}\`\`\``) //dados.level
 .addField(`• Xp:`, `\`\`\`${dados.xp}\`\`\``, true) // dados.xp
 .setFooter(message.author.tag, message.author.avatarURL)
