@@ -4,5 +4,6 @@
 "permban": "Você não possui permissão para executar este comando.",
 "userban": "especifique o usuário.",
 "number": "Coloque um valor válido..",
-"helpc": "Use !limpar <quantidade>"
+"helpc": "Use !limpar <quantidade>",
+"motivoban": "você não especificou o motivo."
 }

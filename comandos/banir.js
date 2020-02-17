@@ -5,6 +5,7 @@ exports.run = (client, message, args) => {
 
 const membro = message.mentions.members.first() || message.guild.members.get(args[0]);
     
+     const embed4 = new Discord.RichEmbed().setDescription(`${message.author}, ${teste.motivoban}`).setColor('RANDOM').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
      const embed3 = new Discord.RichEmbed().setDescription(`${message.author}, ${teste.userban}`).setColor('RANDOM').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
      const embed2 = new Discord.RichEmbed().setDescription(`${message.author}, ${teste.meban}`).setColor('RANDOM').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
      const embed1 = new Discord.RichEmbed().setDescription(`${teste.permban}`).setColor('RANDOM').setFooter(message.author.tag, message.author.avatarURL).setTimestamp()
@@ -22,7 +23,7 @@ if(membro === message.member) return message.channel.send(embed2).then(msg => ms
 if(!membro) return message.channel.send(embed3).then(msg => msg.delete(7 * 1000)) //se executar o comando sem o usuário
 
 const motivo = args.slice(1).join(' ')
-if(!motivo) return message.reply("Você não especificou um motivo")
+if(!motivo) return message.reply()
 
 if (membro) {
 if (motivo) {
