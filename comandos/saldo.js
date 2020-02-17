@@ -14,8 +14,7 @@ exports.run =async  (client, message, args,Database) => {
     if (!member) return message.channel.send(embed1).then (msg => msg.delete(6 * 1000))
       
     const embed = new Discord.RichEmbed()
-    .setTitle("Smash - Money")
-    .setDescription(`Este é seu saldo ${dados.nome}.`)
+    .setDescription(`Este é seu saldo ${dados.nome}:`)
     .addField('Money:', `\`\`${dados.dinheiro}\`\``)
     .addField('Banco:', `\`\`${dados.banco}\`\``, true) 
     .setThumbnail("https://img.icons8.com/clouds/100/000000/money.png")
@@ -23,7 +22,7 @@ exports.run =async  (client, message, args,Database) => {
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
     message.channel.send(embed)
-    }else{
+    }else if(message.author.id == message.author.id){
       
     //mensagem de erro aqui
     }
