@@ -16,7 +16,7 @@ exports.run =async  (client, message, args,Database) => {
     if(message.author.id === message.author) return message.channel.send("eae")
       
     const embed = new Discord.RichEmbed()
-    .setDescription(`💸 Este é o saldo do **${dados.nome}:**\n\nMoney:\n\`\`\`cs\n${dados.dinheiro}\`\`\`\nBanco:\n\`\`cs\n${dados.banco}\`\`\``)
+    .setDescription(`💸 Este é o saldo do **${dados.nome}:**\n\n<:money:679059862591635475> Dinheiro: **${dados.dinheiro}**\nBanco: **${dados.banco}**`)
     .setColor('RANDOM')
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
