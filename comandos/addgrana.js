@@ -9,7 +9,7 @@ exports.run = (client, message, args,Database) => {
   if(isNaN(args[1])) return message.reply("Coloque um valor em número!")
     
   const embed = new Discord.RichEmbed()
-  .setDescription(`✅ | Adicionado R$${args[1]} reais na conta do ${member}!`)
+  .setDescription(`✅ | Adicionado \`\`jsR$${args[1]}\`\` reais na conta do ${member}!`)
   .setColor('#00FF7F')  
   message.channel.send(embed).then (msg => msg.delete(6 * 1000)) 
   valor.dinheiro += args[1];

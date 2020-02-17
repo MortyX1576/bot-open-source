@@ -5,20 +5,24 @@ exports.run = async (client, message, args, Database) => {
 let emojis = message.guild.emojis.map(emoji =>{
 //console.log(emoji.name)
 })
-const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+const emojiList = await message.guild.emojis.map(e=>e.toString()).join(" ' , ' ");
 ArrayEmojis.push(emojiList)
 //console.log(ArrayEmojis)
 //message.channel.send(emojiList);
-ListarEmojis(0)
+ListarEmojis(5)
 function ListarEmojis(pagina){
-  let getPage = pagina+5;
+  let getPage = pagina;
   for (i; i <=getPage;i++){
   final = i;
-  }
+  }    
+  setTimeout(function() {
+  console.log(ArrayEmojis[5])
+  console.log(ArrayEmojis)
   const embed = new Discord.RichEmbed()
   .setTitle("Emojis")
   .setDescription(`${ArrayEmojis[final]}`)
   message.channel.send(embed)
+  },3000)
 }
 }
 exports.help = {

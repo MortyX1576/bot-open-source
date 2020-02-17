@@ -3,10 +3,10 @@ const teste = require('../embed.json')
 
 exports.run = async (client, message, args, Database) => {    
   Database.Guilds.findOne({ _id: message.guild.id}, function(erro, dados) {   
-  let val = args[0];
-  dados.teste.remove(val)
+  dados.usuarios = {id: message.author.id,nome: message.author.name}
   dados.save(); 
-  console.log(dados.teste)
+  console.log(dados.usuarios)
+  message.channel.send(dados.usuarios)
   })
 }
 exports.help = {

@@ -13,29 +13,18 @@ exports.run =async  (client, message, args,Database) => {
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
     if (!member) return message.channel.send(embed1).then (msg => msg.delete(6 * 1000))
+    if(message.author.id === message.author) return message.channel.send("eae")
       
     const embed = new Discord.RichEmbed()
-    .setDescription(`Este é seu saldo ${dados.nome}:`)
-    .addField('Money:', `\`\`${dados.dinheiro}\`\``)
-    .addField('Banco:', `\`\`${dados.banco}\`\``, true) 
-    .setThumbnail("https://img.icons8.com/clouds/100/000000/money.png")
+    .setDescription(`💸 Este é o saldo do **${dados.nome}:**\n\nMoney:\n\`\`\`cs\n${dados.dinheiro}\`\`\`\nBanco:\n\`\`cs\n${dados.banco}\`\`\``)
     .setColor('RANDOM')
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
     message.channel.send(embed)
       
-    }else if (message.author.id === message.author.id) {
+    }else {
       
-    const embed1 = new Discord.RichEmbed()
-    .setDescription(`**${dados.nome}**, seu saldo é:`)
-    .addField('Money:', `\`\`\`cs\n${dados.dinheiro}\`\`\``)
-    .addField('Banco:', `\`\`${dados.banco}\`\``, true) 
-    .setThumbnail("https://img.icons8.com/clouds/100/000000/money.png")
-    .setColor('#87CEEB')
-    .setFooter(message.author.tag, message.author.avatarURL)
-    .setTimestamp()
-    
-    message.channel.send(embed1)
+
     }
     });
 }//reinicia ae
