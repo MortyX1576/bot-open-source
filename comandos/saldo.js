@@ -1,4 +1,5 @@
 const Discord = require ('discord.js')
+const jsone = require('../embed.json')
 
 exports.run =async  (client, message, args,Database) => {
 
@@ -7,8 +8,8 @@ exports.run =async  (client, message, args,Database) => {
     if(dados)
     {
     const embed1 = new Discord.RichEmbed()
-    .setDescription(":no_entry_sign: | Informe um membro.")
-    .setColor('RED')
+    .setDescription(`${message.author}, ${jsone.saldonot}`)
+    .setColor('RANDOM')
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
     if (!member) return message.channel.send(embed1).then (msg => msg.delete(6 * 1000))
@@ -27,7 +28,7 @@ exports.run =async  (client, message, args,Database) => {
       
     const embed1 = new Discord.RichEmbed()
     .setDescription(`**${dados.nome}**, seu saldo é:`)
-    .addField('Money:', `\`\`${dados.dinheiro}\`\``)
+    .addField('Money:', `\`\`\`cs\n${dados.dinheiro}\`\`\``)
     .addField('Banco:', `\`\`${dados.banco}\`\``, true) 
     .setThumbnail("https://img.icons8.com/clouds/100/000000/money.png")
     .setColor('#87CEEB')
