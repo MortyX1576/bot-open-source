@@ -18,13 +18,23 @@ exports.run =async  (client, message, args,Database) => {
     .addField('Money:', `\`\`${dados.dinheiro}\`\``)
     .addField('Banco:', `\`\`${dados.banco}\`\``, true) 
     .setThumbnail("https://img.icons8.com/clouds/100/000000/money.png")
-    .setColor('#87CEEB')
+    .setColor('RANDOM')
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()
     message.channel.send(embed)
-    }else if(message.author.id == message.author.id){
       
-    //mensagem de erro aqui
+    }else if (message.author.id === message.author.id) {
+      
+    const embed1 = new Discord.RichEmbed()
+    .setDescription(`**${dados.nome}**, seu saldo é:`)
+    .addField('Money:', `\`\`${dados.dinheiro}\`\``)
+    .addField('Banco:', `\`\`${dados.banco}\`\``, true) 
+    .setThumbnail("https://img.icons8.com/clouds/100/000000/money.png")
+    .setColor('#87CEEB')
+    .setFooter(message.author.tag, message.author.avatarURL)
+    .setTimestamp()
+    
+    message.channel.send(embed1)
     }
     });
 }//reinicia ae
