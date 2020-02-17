@@ -16,14 +16,14 @@ if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(emb
     .setColor('RED')
     .setDescription("⛔ Você não é um ``DESENVOLVEDOR`` para executar esse comando.")
 
-    if(message.author.id != '336905723621670914') return message.channel.send(embed).then(msg => msg.delete(5 * 1000))
+    if(message.author.id != '336905723621670914') return message.channel.send(embed).then(msg => msg.delete(7 * 1000))
 
 if(membro === message.member) return message.channel.send(embed2).then(msg => msg.delete(7 * 1000)) 
 
 if(!membro) return message.channel.send(embed3).then(msg => msg.delete(7 * 1000)) //se executar o comando sem o usuário
 
 const motivo = args.slice(1).join(' ')
-if(!motivo) return message.reply()
+if(!motivo) return message.channel.send(embed4).then(msg => msg.delete(7 * 1000))
 
 if (membro) {
 if (motivo) {
