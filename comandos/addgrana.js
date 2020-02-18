@@ -12,7 +12,9 @@ exports.run = (client, message, args,Database) => {
   .setDescription(`<:money:679059862591635475> Adicionado \`\`R$${args[1]}\`\` reais na conta do ${member}!`)
   .setColor('#00FF7F')  
   message.channel.send(embed).then (msg => msg.delete(6 * 1000)) 
-  valor.dinheiro += args[1];
+  let value = valor.dinheiro += args[1];
+    console.log(value)
+  valor.dinheiro = 0;
   valor.save();
   })
 }
