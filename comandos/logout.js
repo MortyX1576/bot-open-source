@@ -10,7 +10,7 @@ Database.Usuarios.findOne({_id: x.id}, function(erro, result) {
   //embed
     const embed1 = new Discord.RichEmbed()
     .setDescription("Você não está logado.")
-    .setColor('RED')
+    .setColor('RANDOM')
     
 // embed
     
@@ -18,7 +18,7 @@ await Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, va
 if(!valor) return message.channel.send(embed1).then (msg => msg.delete(5 * 1000))
   
     const embed = new Discord.RichEmbed()
-    .setDescription(`Você fez logout na conta \`${valor.nome}\`!`)
+    .setDescription(`Você fez logout na conta \`${valor.nome}\``)
     .setColor('#ff6767')
     .setFooter(message.author.tag, message.author.avatarURL)
     .setTimestamp()

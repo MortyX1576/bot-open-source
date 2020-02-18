@@ -4,18 +4,12 @@ exports.run = async (client, message, args,Database) => {
    await Database.Usuarios.findOne({idlogado: message.author.id}, function(erro, dados) {   
    if(!dados) return message.reply("Você não está Logado!")
      
-     const embed1 = new Discord.RichEmbed()
-     .setDescription()
-       
-       let on = message.author.presence.status.replace("dnd", "Ocupado").replace("idle", "Ausente").replace("offline", "Invisível").replace("online", "Disponível").replace("stream", "Transmitindo")
-       
      const embed = new Discord.RichEmbed()
     .setAuthor(`Informações do ${dados.nome}`)
-    .addField('**• Dinheiro:**', dados.dinheiro, true)
-    .addField('**• Banco:**', dados.banco, true)
-    .addField('**• Xp:**', dados.xp, true)
-    .addField('**• Level:**',  dados.level, true)
-    .addField('**• Status:**',  `${on}`, true)
+    .addField('Dinheiro:**', dados.dinheiro`, true)
+    .addField('Banco:**', `**${dados.banco**}`, true)
+    .addField('<:serverboost:679041971611762774> Xp:', dados.xp, true)
+    .addField('<a:9306a482c6f241c0b817721d332b3a4a:678314292029947954> Nível:**',  dados.level, true)
     .setThumbnail(message.member.user.avatarURL)
     .setFooter(message.author.tag, message.member.user.avatarURL)
     .setColor('RANDOM')
