@@ -55,7 +55,6 @@ nome: {type: String},
 max_usos: {type: Number},
   
 });
-
 var Usuarios = mongoose.model("Usuarios", Base);
 var Guilds = mongoose.model("Guildas", Guilds);
 var Keys = mongoose.model("Keys", Key);

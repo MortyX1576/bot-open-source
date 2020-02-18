@@ -5,16 +5,12 @@ exports.run = async (client, message, args,Database) => {
    if(!dados) return message.reply("Você não está Logado!")
      
      const embed = new Discord.RichEmbed()
-    .setAuthor(`Informações do ${dados.nome}`)
-    .addField('Dinheiro:**', dados.dinheiro`, true)
-    .addField('Banco:**', `**${dados.banco**}`, true)
-    .addField('<:serverboost:679041971611762774> Xp:', dados.xp, true)
-    .addField('<a:9306a482c6f241c0b817721d332b3a4a:678314292029947954> Nível:**',  dados.level, true)
-    .setThumbnail(message.member.user.avatarURL)
-    .setFooter(message.author.tag, message.member.user.avatarURL)
+    .setAuthor(message.author.tag, message.author.displayAvatarURL)
+    .setDescription(`<:money:679059862591635475> Dinheiro:\n**${dados.dinheiro}**\n:bank:679061278370693130> Banco:\n**${dados.banco}**`)
+    .addField('<:serverboost:679041971611762774> Xp:', `**${dados.xp}**`, false)
+    .addField('<a:9306a482c6f241c0b817721d332b3a4a:678314292029947954> Nível:',  `**${dados.level}**`, false)
     .setColor('RANDOM')
-    .setTimestamp()
-     
+
      message.channel.send(embed)
    })
 }
