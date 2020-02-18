@@ -6,9 +6,7 @@ exports.run = async (client, message, args,Database) => {
      
      const embed = new Discord.RichEmbed()
     .setAuthor(message.author.tag, message.author.displayAvatarURL)
-    .setDescription(`<:money:679059862591635475> Dinheiro:\n**${dados.dinheiro}**\n:bank:679061278370693130> Banco:\n**${dados.banco}**`)
-    .addField('<:serverboost:679041971611762774> Xp:', `**${dados.xp}**`, false)
-    .addField('<a:9306a482c6f241c0b817721d332b3a4a:678314292029947954> Nível:',  `**${dados.level}**`, false)
+    .setDescription(`<:money:679059862591635475> Dinheiro: **${dados.dinheiro}**\n<:bank:679061278370693130> Banco: **${dados.banco}**\n<:serverboost:679041971611762774> Xp: **${dados.xp}**\n<a:9306a482c6f241c0b817721d332b3a4a:678314292029947954> Nível: **${dados.level}**`)
     .setColor('RANDOM')
 
      message.channel.send(embed)
