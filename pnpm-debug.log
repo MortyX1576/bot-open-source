@@ -1,0 +1,69 @@
+---
+  0 debug pnpm:scope: 
+    selected: 1
+    workspacePrefix: null
+  1 info pnpm: 
+    message: "A store server is running. All store manipulations are delegated to it."
+    prefix: "/app"
+  2 debug pnpm:package-json: 
+    initial: 
+      name: "hello-express"
+      version: "0.0.1"
+      description: "A simple Node app built on Express, instantly up and running."
+      main: "index.js"
+      scripts: 
+        start: "node index.js"
+      dependencies: 
+        body-parser: "^1.19.0"
+        btoa: "^1.2.1"
+        canvas: "^2.6.1"
+        cookie-parser: "^1.4.4"
+        discord.js: "^11.5.1"
+        ejs: "^3.0.1"
+        express: "^4.17.1"
+        ffmpeg-binaries: "^4.0.0"
+        fs: "^0.0.2"
+        jimp: "^0.9.3"
+        lowdb: "^1.0.0"
+        minecraft-server-util: "^1.1.0"
+        moment: "^2.24.0"
+        moment-duration-format: "^2.3.2"
+        mongoose: "^5.8.10"
+        node: "^13.6.0"
+        node-fetch: "^2.6.0"
+        node-superfetch: "^0.1.10"
+        opusscript: "0.0.7"
+        pidusage: "^2.0.17"
+        request: "^2.88.0"
+        weather: "^1.0.0"
+        weather-js: "^2.0.0"
+        yt-search: "^1.1.2"
+        ytdl-core: "^1.0.7"
+      engines: 
+        node: "10.x"
+      repository: 
+        url: "https://glitch.com/edit/#!/hello-express"
+      license: "MIT"
+      keywords: 
+        - "node"
+        - "glitch"
+        - "express"
+      gitHead: "29120849a0d8cadf3f8c2ad9daa0dfb5fd62c442"
+      readme: "ERROR: No README data found!"
+      _id: "hello-express@0.0.1"
+    prefix: "/app"
+  3 warn pnpm: 
+    message: "Moving body-parser that was installed by a different package manager to \"node_modules/.ignored"
+    prefix: "/app"
+  4 error pnpm: 
+    message: 
+      errno: -39
+      code: "ENOTEMPTY"
+      syscall: "rename"
+      path: "/rbd/pnpm-volume/84b1c0b3-dd98-4b68-9b9b-e6beafcfacaa/node_modules/body-parser"
+      dest: "/rbd/pnpm-volume/84b1c0b3-dd98-4b68-9b9b-e6beafcfacaa/node_modules/.ignored/body-parser"
+    err: 
+      name: "Error"
+      message: "ENOTEMPTY: directory not empty, rename '/rbd/pnpm-volume/84b1c0b3-dd98-4b68-9b9b-e6beafcfacaa/node_modules/body-parser' -> '/rbd/pnpm-volume/84b1c0b3-dd98-4b68-9b9b-e6beafcfacaa/node_modules/.ignored/body-parser'"
+      code: "ENOTEMPTY"
+      stack: "Error: ENOTEMPTY: directory not empty, rename '/rbd/pnpm-volume/84b1c0b3-dd98-4b68-9b9b-e6beafcfacaa/node_modules/body-parser' -> '/rbd/pnpm-volume/84b1c0b3-dd98-4b68-9b9b-e6beafcfacaa/node_modules/.ignored/body-parser'"

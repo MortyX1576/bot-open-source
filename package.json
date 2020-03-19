@@ -1,11 +1,8 @@
 {
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+  "name": "smoke",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "btoa": "^1.2.1",
@@ -33,16 +30,11 @@
     "yt-search": "^1.1.2",
     "ytdl-core": "^1.0.7"
   },
-  "engines": {
-    "node": "10.x"
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
